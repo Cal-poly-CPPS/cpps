@@ -1,0 +1,12 @@
+.popmenu{
+    height:"100%";
+    width:'300px';
+    
+
+}
+.menuitem{
+    background-color:white ;
+}
+  .menuitem:hover {
+    background-color: rgb(241, 241, 241);
+  }
