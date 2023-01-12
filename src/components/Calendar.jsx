@@ -32,7 +32,7 @@ export const Calendar = () => {
         )
     }
 
-    const [allData, setAllData] = React.useState([[1,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0]])
+    const [allData, setAllData] = React.useState([[["this is some test data"],0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0]])
     
     function emptyCheck(input){
         if (input == 0){
@@ -45,12 +45,12 @@ export const Calendar = () => {
     const [visible, setVisible] = React.useState()
 
 
-    const Popup = () =>{
+    const Popup = (day) =>{
         if (visible){
             return(
-                <div>
+                <div style={{backgroundColor:'white'}}>
                     <div>
-                        this a popup
+                        {day[0]}
                     </div>
                 </div> 
            )
@@ -78,7 +78,7 @@ export const Calendar = () => {
                     <button onClick={() => setVisible(!visible)}>
                         Click me
                     </button>
-                    
+                    {Popup(day)}
                 </div>
             )
         }
@@ -167,7 +167,7 @@ export const Calendar = () => {
 
     return(
         <div>
-            <Popup/>
+            
             <div>
                 <div>Test button</div>
                 <button onClick={() => calendarMini(['test', 'test', 'test', 'test', 'test'])}> Button</button>
