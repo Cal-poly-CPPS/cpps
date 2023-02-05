@@ -36,3 +36,51 @@
     transform: rotate(360deg);
   }
 }
+.sidenav{
+  height: 100%;  
+  position: fixed; 
+  z-index: 0; 
+  background-color:#262525; 
+  transition: .5s ease; 
+  overflow-x: hidden; 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  width: 200px;
+  
+}
+
+#navButton{
+  font-family: Arial;
+  font-size: 25px;
+  color: white;
+  background-color: #262525;
+  border: transparent;
+  border-radius: 5px;
+  text-indent: 10%;
+  width: 155px;
+  height: 50px;
+  text-align: left;
+  cursor: pointer;
+  position: inherit;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+
+body{
+  background-color: #262525;
+}
