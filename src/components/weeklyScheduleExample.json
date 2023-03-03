@@ -1,0 +1,58 @@
+{
+  "courses": [
+    {
+      "courseID": 0,
+      "courseName": "Electrical Circuits Analysis I",
+      "courseSub": "ECE",
+      "courseNum": "1101",
+      "courseProf": ["Aliyazicioglu", "Zekeriya", "Dr."],
+      "courseTime": ["09:00", "10:15"],
+      "courseDays": ["Monday", "Wednesday"]
+    },
+    {
+      "courseID": 1,
+      "courseName": "Newtonian Mechanics",
+      "courseSub": "PHY",
+      "courseNum": "1510",
+      "courseProf": ["Jun", "Pan", "Dr."],
+      "courseTime": ["16:00", "18:15"],
+      "courseDays": ["Monday", "Wednesday"]
+    },
+    {
+      "courseID": 2,
+      "courseName": "History of Garden Art",
+      "courseSub": "PLS",
+      "courseNum": "2140",
+      "courseProf": ["Naveen", "Hyder", "Dr."],
+      "courseTime": ["10:00", "11:15"],
+      "courseDays": ["Tuesday", "Thursday"]
+    },
+    {
+      "courseID": 3,
+      "courseName": "Calculus III",
+      "courseSub": "MAT",
+      "courseNum": "2140",
+      "courseProf": ["Matthew", "Aivazian"],
+      "courseTime": ["15:00", "16:50"],
+      "courseDays": ["Tuesday", "Thursday"]
+    },
+    {
+      "courseID": 4,
+      "courseName": "Newtonian Mechanics Laboratory",
+      "courseSub": "PHY",
+      "courseNum": "1510L",
+      "courseProf": ["Steven", "Jasso"],
+      "courseTime": ["19:00", "21:50"],
+      "courseDays": ["Wednesday"]
+    },
+    {
+      "courseID": 4,
+      "courseName": "Electrical Circuit Anlys I Lab",
+      "courseSub": "ECE",
+      "courseNum": "1101L",
+      "courseProf": ["Ali", "Ghaneh"],
+      "courseTime": ["19:00", "21:50"],
+      "courseDays": ["Thursday"]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url();
+}
+
+.titles{
+    font-size: 60px;
+    color: white;
+    font-family: lato;
+    text-align: center;
+
+    position:relative;
+}
+.buttons{
+    font-size: 40px;
+    color: black;
+    font-family: lato;
+    text-align: center;
+    background-color: white;
+    margin-top: 10%;
+    border-radius: 5px;
+    position:relative;
+}
+
+.classes{
+    position: absolute;
+    color: white;
+    height: 60px;
+    right:20px;
+
+    
+
+}
