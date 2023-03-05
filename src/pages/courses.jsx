@@ -6,12 +6,16 @@ const CourseSearch = () => {
   return (
     <DashboardLayout>
     <div>
+
+
+    <div style={{alignContent:'center', justifyContent:'center', position:'relative', width:'100%', backgroundColor:'grey', textAlign:'center'}}>
       <div>
         Search for professors
       </div>
        {/** Create a for loop for option values with all the courses limited to 10 options */}
-    <input type="text" list="programmingLanguages" placeholder="Enter Here" />
-            <datalist id="programmingLanguages">
+       
+    <input type="text" list="programmingLanguages" placeholder="Enter Here"/>
+            <datalist id="programmingLanguages" style={{}}>
                 <option value="Objective C">Objective C</option>
                 <option value="C++">C++</option>
                 <option value="C#">C#</option>
@@ -26,6 +30,8 @@ const CourseSearch = () => {
                 <option value="R">R</option>
                 <option value="Swift">Swift</option>
             </datalist>
+
+      </div>
     </div>
     </DashboardLayout>
   );
