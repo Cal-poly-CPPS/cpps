@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./courses.css"
 import { DashboardLayout } from "../components/Layout";
 import Calendar from "../components/Calendar";
 const CourseSearch = () => {
@@ -8,13 +8,14 @@ const CourseSearch = () => {
     <div>
 
 
-    <div style={{alignContent:'center', justifyContent:'center', position:'relative', width:'100%', backgroundColor:'grey', textAlign:'center'}}>
-      <div>
+    <div style={{backgroundColor: "gray", display: "flex", 
+    flexDirection: "column", alignItems: "center", padding: "10px"}}>
+      <div id='search-title'>
         Search for professors
       </div>
        {/** Create a for loop for option values with all the courses limited to 10 options */}
        
-    <input type="text" list="programmingLanguages" placeholder="Enter Here"/>
+    <input type="text" id="searchbox" list="programmingLanguages" placeholder="Enter Here"/>
             <datalist id="programmingLanguages" style={{}}>
                 <option value="Objective C">Objective C</option>
                 <option value="C++">C++</option>

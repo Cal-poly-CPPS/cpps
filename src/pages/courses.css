@@ -1,0 +1,18 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url();
+}
+
+#search-title {
+    font-family: lato;
+    text-align: center;
+    font-size: 45px;
+}
+
+#searchbox {
+    margin-top: 5px;
+    position: relative;
+    width: 300px;
+    border-radius: 5px;
+    padding: 5px;
+}
