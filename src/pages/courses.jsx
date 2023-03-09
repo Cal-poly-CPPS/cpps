@@ -9,7 +9,7 @@ const CourseSearch = () => {
 
 
     <div style={{backgroundColor: "gray", display: "flex", 
-    flexDirection: "column", alignItems: "center", padding: "10px"}}>
+    flexDirection: "column", alignItems: "center", padding: "5px"}}>
       <div id='search-title'>
         Search for professors
       </div>

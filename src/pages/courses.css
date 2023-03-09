@@ -11,8 +11,9 @@
 
 #searchbox {
     margin-top: 5px;
-    position: relative;
+    margin-bottom: 15px;
+    position: static;
     width: 300px;
-    border-radius: 5px;
+    border-radius: 30px;
     padding: 5px;
 }
