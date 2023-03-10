@@ -1,7 +1,9 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import FullCalendar from "@fullcalendar/react";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import student from "./weeklyScheduleExample.json";
+import Dialog from "@mui/material/Dialog";
+import Divider from "@mui/material/Divider";
 import "./Cal.css";
 
 const daysOfWeek = [
@@ -24,30 +26,48 @@ const events = student.courses.map((course) => {
   };
 });
 
+const EventDetail = (props) => {
+  const { eventInfo, isOpen, setOpen } = props;
+  const handleClose = () => setOpen(false);
+  useEffect(() => setOpen(isOpen), [isOpen]);
+
+  return (
+    <Dialog open={isOpen} onClose={handleClose} hideBackdrop={true}>
+      <div>{eventInfo.title}</div>
+      <Divider></Divider>
+      <div></div>
+    </Dialog>
+  );
+};
+
 const Calendar = () => {
   const [myEvents, setEvents] = useState(events);
-  const handleSelectEvent = useCallback(
-    (e) =>
-      window.alert(
-        JSON.stringify(e.el.fcSeg.eventRange.def.extendedProps, null, 4)
-      ),
-    []
-  );
+  const [open, setOpen] = useState(false);
+  const [popupInfo, setPopupInfo] = useState([]);
+  const handleSelectEvent = useCallback((info) => {
+    setPopupInfo(info.event);
+    setOpen(true);
+  }, []);
+
   return (
     <div className="container">
-      <div style={{backgroundColor:'white', height:'90%', borderRadius:'20px', }}>
-      <FullCalendar
-        plugins={[timeGridPlugin]}
-        initialView="timeGridWeek"
-        height="90%"
-
-        eventClick={handleSelectEvent}
-        events={myEvents}
-      />
+      <div
+        style={{
+          backgroundColor: "white",
+          height: "90%",
+          borderRadius: "20px",
+        }}
+      >
+        <EventDetail eventInfo={popupInfo} isOpen={open} setOpen={setOpen} />
+        <FullCalendar
+          plugins={[timeGridPlugin]}
+          initialView="timeGridWeek"
+          height="90%"
+          eventClick={handleSelectEvent}
+          events={myEvents}
+        />
       </div>
-      <div>
-        scheduler 
-      </div>
+      <div>scheduler</div>
     </div>
   );
 };
