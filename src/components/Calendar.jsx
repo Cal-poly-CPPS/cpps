@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import FullCalendar from "@fullcalendar/react";
 import timeGridPlugin from "@fullcalendar/timegrid";
+import { Box, Dialog, IconButton } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
 import student from "./weeklyScheduleExample.json";
-import Dialog from "@mui/material/Dialog";
-import Divider from "@mui/material/Divider";
 import "./Cal.css";
 
 const daysOfWeek = [
@@ -26,22 +26,53 @@ const events = student.courses.map((course) => {
   };
 });
 
-const EventDetail = (props) => {
+const EventPopup = (props) => {
   const { eventInfo, isOpen, setOpen } = props;
+  const event = eventInfo.extendedProps?.info;
   const handleClose = () => setOpen(false);
+
   useEffect(() => setOpen(isOpen), [isOpen]);
 
   return (
-    <Dialog open={isOpen} onClose={handleClose} hideBackdrop={true}>
-      <div>{eventInfo.title}</div>
-      <Divider></Divider>
-      <div></div>
+    <Dialog
+      fullWidth={true}
+      maxWidth={"sm"}
+      open={isOpen}
+      onClose={handleClose}
+      hideBackdrop={true}
+    >
+      {event && (
+        <Box p={2}>
+          <Box display="flex" alignItems="center">
+            <Box flexGrow={1}>{event.courseName}</Box>
+            <Box>
+              {event.courseSub} {event.courseNum}
+            </Box>
+            <Box>
+              <IconButton onClick={handleClose}>
+                <CloseIcon />
+              </IconButton>
+            </Box>
+          </Box>
+
+          <Box>
+            {event.courseProf[2] && event.courseProf[2] + " "}
+            {event.courseProf[0]} {event.courseProf[1]}
+          </Box>
+          <Box sx={{ color: "grey", fontSize: 13 }}>
+            {event.courseDays.map((day) => (
+              <Box>
+                {day} {event.courseTime[0]}-{event.courseTime[1]}
+              </Box>
+            ))}
+          </Box>
+        </Box>
+      )}
     </Dialog>
   );
 };
 
 const Calendar = () => {
-  const [myEvents, setEvents] = useState(events);
   const [open, setOpen] = useState(false);
   const [popupInfo, setPopupInfo] = useState([]);
   const handleSelectEvent = useCallback((info) => {
@@ -58,16 +89,16 @@ const Calendar = () => {
           borderRadius: "20px",
         }}
       >
-        <EventDetail eventInfo={popupInfo} isOpen={open} setOpen={setOpen} />
+        <EventPopup eventInfo={popupInfo} isOpen={open} setOpen={setOpen} />
         <FullCalendar
+          allDaySlot={false}
           plugins={[timeGridPlugin]}
           initialView="timeGridWeek"
           height="90%"
           eventClick={handleSelectEvent}
-          events={myEvents}
+          events={events}
         />
       </div>
-      <div>scheduler</div>
     </div>
   );
 };
