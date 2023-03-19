@@ -2,18 +2,24 @@ import React from "react";
 
 import { DashboardLayout } from "../components/Layout";
 import Calendar from "../components/Calendar";
+
+
+import "./courses.css";
+import SearchBar from "../components/SearchBar";
+
+
 const CourseSearch = () => {
   return (
     <DashboardLayout>
-    <div>
+    <div className="App">
 
 
     <div style={{alignContent:'center', justifyContent:'center', position:'relative', width:'100%', backgroundColor:'grey', textAlign:'center'}}>
       <div>
-        Search for professors
+        Search for courses
       </div>
        {/** Create a for loop for option values with all the courses limited to 10 options */}
-       
+{/*        
     <input type="text" list="programmingLanguages" placeholder="Enter Here"/>
             <datalist id="programmingLanguages" style={{}}>
                 <option value="Objective C">Objective C</option>
@@ -29,9 +35,15 @@ const CourseSearch = () => {
                 <option value="Perl">Perl</option>
                 <option value="R">R</option>
                 <option value="Swift">Swift</option>
-            </datalist>
+            </datalist> */}
 
       </div>
+            <div className="search-bar-container">
+              <SearchBar/>
+              <div>SearchResults</div>
+            </div>
+
+
     </div>
     </DashboardLayout>
   );
