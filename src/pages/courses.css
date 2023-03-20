@@ -8,6 +8,25 @@
     padding: 0px;
 
 }
+@font-face {
+    font-family: myFirstFont;
+    src: url();
+}
+
+#search-title {
+    font-family: lato;
+    text-align: center;
+    font-size: 45px;
+}
+
+#searchbox {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    position: static;
+    width: 300px;
+    border-radius: 30px;
+    padding: 5px;
+}
 
 .search-bar-container{
     padding-top: 5vh;
