@@ -1,0 +1,75 @@
+.app{
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+
+}
+@font-face {
+    font-family: myFirstFont;
+    src: url();
+}
+
+#search-title {
+    font-family: lato;
+    text-align: center;
+    font-size: 45px;
+}
+
+#searchbox {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    position: static;
+    width: 300px;
+    border-radius: 30px;
+}
+
+.search-bar-container{
+    width: 30%;
+    margin: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: normal;
+    min-width: 200px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.courses-container{
+    width: 90%;
+    margin-top: 90%;
+}
+
+.display{
+    background-color: white;
+    padding-top: 5vh;
+    width: auto;
+    text-align: left;
+    border-radius: 20px;
+    margin: 25px;
+    padding: 25px;
+    height: 20%;
+    flex-direction: row;
+    align-self: center;
+    min-height: 30%;
+}
+
+
+.header{
+    text-align: left;
+    max-width: 25%;
+}
+
+.search-results{
+    width: 50%;
+    outline-style: groove;
+    float: right;
+    border-radius: 20px;
+    height: 80%;
+    display: flex;
+    text-align: left;
+    padding: 20px;
+    align-self: center;
+}
