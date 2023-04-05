@@ -75,6 +75,7 @@ const ProfessorPage = () => {
                 </div>
                 <button className='buttonProp'>Rate This Professor</button>
             </div>
+            <div className='break'></div>
             
             
 
