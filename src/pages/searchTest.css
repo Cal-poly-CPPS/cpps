@@ -1,0 +1,114 @@
+.App{
+    background-color: #313131;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+
+}
+@font-face {
+    font-family: myFirstFont;
+    src: url();
+}
+
+#searchTitle {
+    font-family: lato;
+    text-align: center;
+    font-size: 45px;
+    color: rgb(168, 168, 168);
+}
+
+.searchBarContainer{
+    padding-top: 5vh;
+    width: 40%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 200px;
+    /* background-color: lightblue; */
+}
+
+.littleTitle{
+    width: 30%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    /* background-color: lightblue; */
+    justify-content: center;
+    align-self: flex-start;
+}
+
+.classInfo{
+    width: 100%;
+    margin: 7.5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    /* border: 1px solid lightgray; */
+}
+
+.multipleInfo{
+    width: 50%;
+    margin: 2vh;
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+    /* background-color: lightgreen; */
+    border-radius: 7.5px;
+    border: 2px solid gray;
+    align-self: flex-end;
+    /* overflow-y: scroll;
+    max-height: 25%; */
+}
+
+.bigBox{
+    margin: 3vh;
+    /* justify-content: space-evenly; */
+    /* align-items: flex-end; */
+    background-color: lightgray;
+    display: flex;
+    /* flex-direction: row; */
+    border-radius: 10px;
+    border: 2px solid rgb(70, 70, 70);
+    font-size: 16px;
+    font-family: lato;
+}
+
+.tester{
+    background-color: orange;
+    border-radius: 3px;
+    border: 2px solid gray;
+}
+
+.forButton{
+    background-color: lightgrey;
+    border-radius: 8px;
+    border: 2px solid gray;
+    width: 20%;
+    font-size: 16px;
+    font-family: lato;
+    padding: 4px;
+}
+
+.titleProps{
+    /*style={{backgroundColor: '#313131', display: "flex", flexDirection: "column", alignItems: "center", padding: "5px"}}*/
+    background-color: #313131;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5x;
+}
+
+.line{
+    background-color: gray;
+    width: 50%;
+    height: 2.5px;
+    align-self: center;
+
+}

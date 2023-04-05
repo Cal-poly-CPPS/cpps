@@ -9,8 +9,22 @@ export const DashboardLayout = ({ children }) => {
     { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' },
-    { label: 'Professors', path: '/courses' },
+    { label: 'Professors', path: '/professor' },
+    { label: 'Courses', path: '/courses' },
+    { label: 'ProfessorPage', path: '/professorPage' },
+    { label: 'Search Test', path: '/searchTest' },
   ];
+
+  //can a loop like this be put in the div space? kind of like a ternary function of what to display? 
+  /** if (signedIn == true) {
+        for (amount of classes user is attending){
+          {label: arrayOfClasses[i].name, path: className *or something like that*}
+        }
+      } else {
+        {label: 'Sign In', path: '/signIn' },
+        {label: 'Sign Up', path: '/signUp'},
+      }
+    */
 
 
   return (

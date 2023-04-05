@@ -8,7 +8,9 @@ import TeamsPage from "./teams";
 import HomePage from "./home";
 import CalendarPage from "./calendarpage";
 import Courses from "./courses";
+import Professor from "./professor";
 import ProfessorPage from "./professorPage";
+import SearchTest from "./searchTest";
 
 
 const Routers = () => {
@@ -24,8 +26,9 @@ const Routers = () => {
         <Route path="/calendar" element={<CalendarPage />}/> 
         <Route path="/home" element={<HomePage />}/> 
         <Route path="/courses" element={<Courses />}/> 
-        <Route path="/professor" element={<ProfessorPage />}/> 
-
+        <Route path="/professor" element={<Professor />}/> 
+        <Route path="/professorPage" element={<ProfessorPage />}/>
+        <Route path="/searchTest" element={<SearchTest />}/>
 
       </Routes>
     </BrowserRouter>

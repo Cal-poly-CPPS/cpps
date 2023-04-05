@@ -1,0 +1,67 @@
+[
+    {
+        "deptKey": 0,
+        "deptName": "Computer Science",
+        "professors": [
+            {
+                "profKey": 0,
+                "name": "Keivan Navi",
+                "courses": [
+                    "CS 1300",
+                    "CS 2610",
+                    "CS 2640",
+                    "CS 3010",
+                    "CS 4200",
+                    "ETE 4351"
+                ]
+            },
+            {
+                "profKey": 1,
+                "name": "David Gershman",
+                "courses": [
+                    "CS 1260",
+                    "CS 2600",
+                    "CS 3800",
+                    "CS 4310",
+                    "CS 4990"
+                ]
+            }
+        ]
+    },
+    {
+        "deptKey": 1,
+        "deptName": "Computer Engineering",
+        "professors": [
+            {
+                "profKey": 0,
+                "name": "Valerio Formicola",
+                "courses": [
+                    "ECE 1310",
+                    "ECE 1320"
+                ]
+            },
+            {
+                "profKey": 1,
+                "name": "Zekeriya Aliyazicioglu",
+                "courses": [
+                    "ECE 1101",
+                    "ECE 2101",
+                    "ECE 3101",
+                    "ECE 3101L",
+                    "ECE 4705",
+                    "ECE 4705L",
+                    "ECE 5470",
+                    "ECE 6910",
+                    "ECE 6950",
+                    "ECE 6990",
+                    "EGR 4810",
+                    "EGR 4820",
+                    "EGR 4820H",
+                    "EGR 4830",
+                    "EGR 6910",
+                    "EGR 6950"
+                ]
+            }
+        ]
+    }
+]

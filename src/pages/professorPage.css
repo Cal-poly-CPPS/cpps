@@ -1,0 +1,134 @@
+.outbox {
+    border-radius: 25px;
+    background: #FFFFFF;
+    margin-left: 5%;
+    margin-right:5%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 20px;
+    display: inline-block;
+    /* width: 75%;
+    height: auto; */
+    
+    /* float: right; */
+  }
+
+.inbox {
+  background: #ffffff;
+  padding: 20px;
+  scroll-behavior: smooth;
+  /* border: 5px solid; */
+  display: inline-block;
+}
+
+.circle {
+  /* position: absolute; */
+  background: #707070;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  justify-content: center;
+  /* vertical-align: middle; */
+}
+
+
+.semi-circle-top {
+  width: 75px;
+  height: 36.5px;
+  background-color: #707070;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  
+  text-align: center;
+  vertical-align: top;
+  overflow: hidden;
+  margin: 1px;
+}
+
+.semi-circle-bottom {
+  width: 75px;
+  height: 36.5px;
+  background-color: #707070;
+  border-radius: 0 0 50% 50% / 0 0 100% 100%;
+  
+  
+  text-align: center;
+  vertical-align: top;
+  overflow: hidden;
+
+  margin: 1px;
+}
+
+p {
+  line-height: normal;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.circle-contents{
+  /* position: inherit; */
+  top: 7.5%;
+  margin: auto;
+  /*background-color: red;*/
+  text-align: center;
+  display: inline-block;
+}
+
+.center {
+  /* border: 5px solid; */
+  padding: 10%;
+  text-align: center;
+  color: white;
+}
+
+.circle-box{
+  /* border: 5px solid; */
+  width: 75px;
+  height: 75px;
+  align-content: center;
+}
+
+.professorName{
+    font-size: 45px;
+    font-weight: 350;
+    align-Items: flex-end;
+    margin: 5px;
+}
+
+.generalInfoBox{
+    max-width: 40%;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    /* background-color: lightblue; */
+    align-items: flex-end;
+    font-size: 17.5px; 
+    gap: .75lh;
+}
+
+.statisticsBox{
+    max-width: 40%;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    font-size: 17.5px;
+    margin-left: 2lh;
+    gap: .75lh;
+}
+
+.topBox{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.buttonProp{
+    background-color: lightgrey;
+    border-radius: 20px;
+    border: 2px solid gray;
+    max-width: 20%;
+    width: fit-content;
+    font-size: 17.5px;
+    padding: 20px;
+    justify-self: right;
+}

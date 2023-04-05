@@ -1,0 +1,90 @@
+{
+    "departments":[
+        {
+            "deptName": "Computer Science",
+            "professors": [
+                {
+                    "name": "Keivan Navi",
+                    "ratings": [
+                        {   
+                            "accountID": 1,
+                            "courseTaken": "CS1300",
+                            "rating": 3,   
+                            "difficulty": 4,
+                            "review": "Professor Navi was nice to everyone and was really interested in what he was teaching, especially chip manufacturing. Sometimes I wasn't sure what we were learning but as long as you participate and come to class everyday you should be fine. Exams are hand written and were very difficult for me at least."
+                        },
+                        {
+                            "accountID": 2,
+                            "courseTaken": "CS1300",
+                            "rating": 2,
+                            "difficulty": 4,
+                            "review": "At times it seemed like Professor Navi wrote things down as he talked and there was no real structure to the course. Half the time I didn't even know what we were learning. He doesn't post anything on Canvas so you won't know your grade until after finals. Overall, Professor was friendly and was passionate about his class but I wouldn't recommend."
+                        }
+                    ]
+                },
+                {
+                    "name": "David Gershman",
+                    "ratings": [
+                        {
+                            "accountID": 1,
+                            "courseTaken": "CS2600",
+                            "rating": 2,   
+                            "difficulty": 4,
+                            "review": "The content isn't hard to grasp but he expects you to be very proficient Unix. He doesn't give homework which is nice, but you need to make sure you find out what breaks the commands too, that will help you answer the test questions. Also, the tests try to trick you often, so make sure you read the questions very carefully. Also brush up on C!"
+                        },
+                        {
+                            "accountID": 2,
+                            "courseTaken": "CS3800",
+                            "rating": 1,   
+                            "difficulty": 5,
+                            "review": "Okay, Prof. Greshman is a nice man. Don't take his Computer Networks class if you can avoid it. First off, this is a IT class. Not a CS class. I was under the impression that I would be doing network programming. Instead this class is very much taught and information presented is that of a network admin. class. Hard tests and no curve. GPA KILLER"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "deptName": "Computer Engineering",
+            "professors": [
+                {
+                    "name": "Valario Formicola",
+                    "ratings": [
+                        {
+                            "studentID": 1,
+                            "courseTaken": "ECE1310",
+                            "rating": 1,
+                            "difficulty": 5,
+                            "review": "If you have no coding experience, do not take Formicola! He gives no homework to practice, the lectures were boring and did not demonstrate the concets, and the tests were mostly on paper. However, the last midterm and the final were coding on the computer, so if you already know C++ then he is a fine option to take."
+                        },
+                        {
+                            "studentID": 2,
+                            "courseTaken": "ECE1310",
+                            "rating": 1,
+                            "difficulty": 4,
+                            "review": "Class is just watching this professor talk through a PowerPoint and occasionally writing a few lines of code. Does not encourage participation; if the room were empty there would be nothing different about his teaching style. Expects us to write our own programs but does not assign any work to help us understand the material. Ineffective test prep."
+                        }
+                    ]
+                },
+                {
+                    "name": "",
+                    "ratings": [
+                        {
+                            "accountID": 1,
+                            "courseTaken": "ECE1101",
+                            "rating": 1,   
+                            "difficulty": 4,
+                            "review": "His lecture reflect nothing that is on quizzes, homework and tests. Poorly explains his work and berrates you for asking questions in class. He actually threatened to fail a student for asking questions even though it was on concepts that the student struggled with and genuinely wanted to learn"
+                        },
+                        {
+                            "accountID": 2,
+                            "courseTaken": "ECE3101",
+                            "rating": 2,   
+                            "difficulty": 5,
+                            "review": "You will definitely learn a lot taking Zeki but it is not worth his other aspects as a professor. He is incredibly uncompromising in his grading and somewhat in his expectations. He barely grades for effort and heavily emphasizes accuracy. He will give an assignment a failing grade for merely a wrong answer, even with correct steps."
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
