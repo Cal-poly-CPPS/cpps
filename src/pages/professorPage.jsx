@@ -8,6 +8,8 @@ import { flexbox } from "@mui/system";
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from "react-router-dom";
 
+import ReactStars from "react-rating-stars-component";
+
 
 
 
@@ -44,7 +46,20 @@ const ProfessorPage = () => {
     <DashboardLayout>
         <div>
             <div>
-            
+                <button>{useSearchParams.get}</button>
+
+                <div>
+                    <ReactStars
+
+                        count={10}
+                        color={"white"}
+                        activeColor={"gray"}
+
+                    >
+
+
+                    </ReactStars>
+                </div>
             </div>
             <div>
             
