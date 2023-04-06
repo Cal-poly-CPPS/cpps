@@ -49,6 +49,10 @@ const ProfessorPage = () => {
                 <button>{useSearchParams.get}</button>
 
                 <div>
+
+                    hello
+
+                    
                     <ReactStars
 
                         count={10}
