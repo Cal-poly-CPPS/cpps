@@ -8,26 +8,50 @@
     color: white;
     font-family: lato;
     text-align: center;
-
     position:relative;
 }
 .buttons{
     font-size: 40px;
-    color: black;
+    font-weight: 50px;
+    color: #0d0d0d;
     font-family: lato;
     text-align: center;
     background-color: white;
     margin-top: 10%;
     border-radius: 5px;
     position:relative;
+    box-shadow: 3px 5px 10px 5px;
 }
 
-.classes{
+.buttons:hover {
+    transform: scale(0.992);
+}
+
+.buttons:active {
+    transform: scale(0.982);
+}
+
+.table {
+    align-items: center;
+    display: table;
     position: absolute;
-    color: white;
-    height: 60px;
-    right:20px;
+    padding: 10px;
+    background-color: white;
+    border-radius:  10px;
+    right: 20px;
+    width: 30vw;
+}
 
-    
+.row {
+    display: table-row;
+    background-color: #ffffff;
+    padding: 3px;
+}
 
+.cell {
+    display: table-cell;
+    padding: 3px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid; 
 }

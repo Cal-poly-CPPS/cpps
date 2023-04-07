@@ -20,11 +20,11 @@ for (const x in student.courses){
 const HomePage = () => {
   return (
     <DashboardLayout>
-      <div style={{}}>
+      <div style={{marginTop:'300px'}}>
         <div style={{display:'flex', justifyContent:'center'}}>
           <div>
             <div className="titles">
-              CPP Data
+              CPP Scheduler
             </div>
             <div className="buttons">
               Professors
@@ -36,26 +36,25 @@ const HomePage = () => {
 
         <div>
           
-          <div>
-            <Row className="classes">
+          <div className="table">
               {StudentData.map((props) => {
                   return ( 
-                      <Col sm={10} md={15} className='mt-3'>
-                          <div style={{backgroundColor:'black', borderColor:'white', width:'30vw'}}>
-                              <div style={{display:'flex', borderColor:'white', borderWidth:'2px', borderStyle:'solid'}}>
-                            
-                                <p style={{marginLeft:'2px', fontWeight:'500', width:'150px'}}>{props.courseName}</p>
-                              
-                                <p style={{marginLeft:'5px', display:'flex'}}><>{props.courseTime[0]}</><> to</> {props.courseTime[1]}</p>
-                                <p style={{marginLeft:'5px'}}>{props.courseNum}</p>
-                                <p style={{marginLeft:'5px'}}>{props.courseProf}</p>
-                            
-                              </div>
-                          </div>
-                      </Col>
+                    <div className="row">
+                      <div className="cell">
+                        {props.courseName}
+                      </div>
+                      <div className="cell">
+                        <>{props.courseTime[0]}</> <>-</> <>{props.courseTime[1]}</>
+                      </div>
+                      <div className="cell">
+                        {props.courseNum}
+                      </div>
+                      <div className="cell">
+                        <p>{props.courseProf}</p>
+                      </div>
+                    </div>
                   )
               })}
-            </Row>
           </div>
         </div>
 

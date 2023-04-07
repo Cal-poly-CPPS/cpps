@@ -1,0 +1,9 @@
+.container {
+    margin-top: 300px;
+}
+
+#main-title {
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+}
