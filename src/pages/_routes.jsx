@@ -10,11 +10,13 @@ import CalendarPage from "./calendarpage";
 import Courses from "./courses";
 import ProfessorPage from "./professorPage";
 
+import TestingPage from "./testing";
 
 const Routers = () => {
   return (
     <BrowserRouter>
       <Routes>
+        
         <Route path="/about/members" element={<MembersPage />}/>
         <Route path="/about/projects" element={<ProjectsPage />}/>
         <Route path="/about" element={<AboutPage />}/>
@@ -25,6 +27,8 @@ const Routers = () => {
         <Route path="/home" element={<HomePage />}/> 
         <Route path="/courses" element={<Courses />}/> 
         <Route path="/professor" element={<ProfessorPage />}/> 
+        <Route path="/testing" element={<TestingPage />} />
+
 
 
       </Routes>

@@ -10,6 +10,7 @@ import { useSearchParams } from "react-router-dom";
 
 import ReactStars from "react-rating-stars-component";
 
+import "./professorPage.css";
 
 
 
@@ -41,35 +42,75 @@ const ProfessorPage = () => {
     
     //setTest(JSON.stringify(data));
 
+
+    const ratingChanged = (newRating) => {
+        console.log(newRating);
+        };
+
+
       
   return (
+
+    <div>
     <DashboardLayout>
-        <div>
+        <div className="page">
             <div>
-                <button>{useSearchParams.get}</button>
+                <h1 color="black">Professor A</h1>
 
-                <div>
+            </div>
 
-                    hello
 
-                    
-                    <ReactStars
 
+
+            <div className="enteringStars">
+                <div className="starsGroup">
+                    <button className="buttons-stars">Difficulty</button>
+                    <div className="stars">
+                        <ReactStars
                         count={10}
-                        color={"white"}
-                        activeColor={"gray"}
-
-                    >
-
-
-                    </ReactStars>
+                        onChange={ratingChanged}
+                        size={20}
+                        activeColor="#ffd700"
+                        />
+                    </div>
+                </div>
+                <div className="starsGroup">
+                    <button className="buttons-stars">Lecture</button>
+                    
+                    <div className="stars">
+                        <ReactStars
+                        count={10}
+                        onChange={ratingChanged}
+                        size={20}
+                        activeColor="#ffd700"
+                        />
+                    </div>
                 </div>
             </div>
-            <div>
-            
+
+
+            <div className = "reviews">
+
+                <div>
+                    <h2>Review</h2>
+                </div>
+
+                <div className="writtenRatings">
+                    
+                    <form /*onSubmit={function}*/>
+                        <div>
+                            <textarea placeholder="Type Here..."></textarea>
+                        </div>
+
+                        <button type="submit">Submit</button>
+                    </form>
+
+                </div>
             </div>
         </div>
     </DashboardLayout>
+    
+    </div>
   );
 };
 
