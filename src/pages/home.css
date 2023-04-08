@@ -39,7 +39,6 @@
     background-color: white;
     border-radius:  10px;
     width: 550px;
-    z-index: 3;
     margin-top: 350px;
     box-shadow: 0px 3px 3px;
 }
@@ -62,7 +61,6 @@
     position: absolute;
     height: 875px;
     width: 750px;
-    z-index: 1;
     border-radius: 20px;
     border: white;
     border-style: solid;

@@ -20,9 +20,9 @@ for (const x in student.courses){
 const HomePage = () => {
   return (
     <DashboardLayout>
-      <div style={{marginTop:'200px'}}>
-        <div style={{display:'flex', justifyContent:'center', zIndex: '2'}}>
-          <div style={{zIndex:'2'}}>
+      <div style={{marginTop:'225px'}}>
+        <div style={{display:'flex', justifyContent:'center'}}>
+          <div style={{zIndex:'1'}}>
             <div className="titles">
               CPP Scheduler
             </div>
