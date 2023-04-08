@@ -20,9 +20,9 @@ for (const x in student.courses){
 const HomePage = () => {
   return (
     <DashboardLayout>
-      <div style={{marginTop:'300px'}}>
-        <div style={{display:'flex', justifyContent:'center'}}>
-          <div>
+      <div style={{marginTop:'200px'}}>
+        <div style={{display:'flex', justifyContent:'center', zIndex: '2'}}>
+          <div style={{zIndex:'2'}}>
             <div className="titles">
               CPP Scheduler
             </div>
@@ -33,10 +33,8 @@ const HomePage = () => {
               Courses
             </div>
           </div>
-
-        <div>
-          
-          <div className="table">
+          <div className="background-div"></div>
+            <div className="table">
               {StudentData.map((props) => {
                   return ( 
                     <div className="row">
@@ -54,13 +52,9 @@ const HomePage = () => {
                       </div>
                     </div>
                   )
-              })}
-          </div>
+                })}
+            </div>
         </div>
-
-      </div>
-
-
       </div>
     </DashboardLayout>
   );

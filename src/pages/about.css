@@ -1,9 +1,17 @@
 .container {
-    margin-top: 300px;
-}
-
-#main-title {
     display: flex;
     justify-content: center;
-    font-size: 60px;
+    align-items: center;
+}
+
+.about-content {
+    position: relative;
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+    width: 700px;
+    height: 150px;
+    z-index: 2;
+    box-shadow: 15px 15px 1px;
+    margin-left: 10px;
 }
