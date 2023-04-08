@@ -15,6 +15,8 @@ import "./ProfessorRating.css";
 
 
 
+
+
 const ProfessorRating = () => {
     //gets name from url
     
@@ -54,7 +56,8 @@ const ProfessorRating = () => {
     <div>
     <DashboardLayout>
         <div className="page">
-            <div>
+            
+            <div className=" professorName">
                 <h1 color="black">Professor A</h1>
 
             </div>
@@ -86,10 +89,31 @@ const ProfessorRating = () => {
                         />
                     </div>
                 </div>
+
+                <div className="enteringGrades">
+                    <div className="starsGroup">
+                        <div className="gradeText">Your Grade</div>
+                        
+                        
+                        <div className="stars">
+                            <input className="gradeInput" placeholder="Enter here..."></input>
+                        </div>
+                    </div>
+
+                    <div className="starsGroup">
+                        <div className="gradeText">Courses</div>
+                        
+                        <div className="stars">
+                            <input className="gradeInput" placeholder="Enter here..."></input>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
 
             <div className = "reviews">
+                
 
                 <div>
                     <h2>Review</h2>
@@ -102,7 +126,7 @@ const ProfessorRating = () => {
                             <textarea placeholder="Type Here..."></textarea>
                         </div>
 
-                        <button type="submit">Submit</button>
+                        <button className = "buttons-stars " type="submit">Submit</button>
                     </form>
 
                 </div>
