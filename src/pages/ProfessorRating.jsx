@@ -114,4 +114,5 @@ const ProfessorRating = () => {
   );
 };
 
+
 export default ProfessorRating;
