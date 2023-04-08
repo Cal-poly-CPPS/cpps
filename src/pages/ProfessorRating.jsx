@@ -10,7 +10,7 @@ import { useSearchParams } from "react-router-dom";
 
 import ReactStars from "react-rating-stars-component";
 
-import "./professorPage.css";
+import "./ProfessorRating.css";
 
 
 
