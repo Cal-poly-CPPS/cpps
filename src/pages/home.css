@@ -20,7 +20,7 @@
     margin-top: 10%;
     border-radius: 10px;
     position:relative;
-    box-shadow: 0px 3px 3px;
+    box-shadow: 0px 3px 5px;
 }
 
 .buttons:hover {
@@ -38,9 +38,9 @@
     padding: 10px;
     background-color: white;
     border-radius:  10px;
-    width: 550px;
+    width: 600px;
     margin-top: 350px;
-    box-shadow: 0px 3px 3px;
+    box-shadow: 0px 3px 5px;
 }
 
 .row {
@@ -60,9 +60,10 @@
 .background-div {
     position: absolute;
     height: 875px;
-    width: 750px;
+    width: 800px;
     border-radius: 20px;
     border: white;
+    border-width: 2px;
     border-style: solid;
     top: 150px;
     background-color: #282c34;

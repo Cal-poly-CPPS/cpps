@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import "./home.css"
 import { DashboardLayout } from "../components/Layout";
 import Calendar from "../components/Calendar";
@@ -22,18 +23,22 @@ const HomePage = () => {
     <DashboardLayout>
       <div style={{marginTop:'225px'}}>
         <div style={{display:'flex', justifyContent:'center'}}>
-          <div style={{zIndex:'1'}}>
+        <div className="background-div"></div>
+          <div style={{}}>
             <div className="titles">
               CPP Scheduler
             </div>
             <div className="buttons">
-              Professors
+              <Link style={{textDecoration:'none', color:'black'}} to="/professors">
+                Professors
+              </Link>
             </div>
             <div className="buttons">
-              Courses
+              <Link style={{textDecoration:'none', color:'black'}} to="/courses">
+                Courses
+              </Link>
             </div>
           </div>
-          <div className="background-div"></div>
             <div className="table">
               {StudentData.map((props) => {
                   return ( 

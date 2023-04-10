@@ -19,7 +19,7 @@ export function NavSidebar({ links }) {
         <ul>
           {links.map((link, index) => (
             <li key={index}>
-              <Link to={link.path} onClick={handleMenuClick}>
+              <Link style={{textDecoration:'none', color:'black'}} to={link.path} onClick={handleMenuClick}>
                 {link.label}
               </Link>
             </li>
