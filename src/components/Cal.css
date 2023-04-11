@@ -10,9 +10,8 @@ body {
 .fc {
   background-color: #fff;
   opacity: 90%;
+  padding: 1%;
   width: 90%;
-  margin-left:5%;
-  
-  position:'absolute';
-  border-radius: 30%;
+  margin-left: 5%;
+  position: "absolute";
 }

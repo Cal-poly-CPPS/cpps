@@ -15,16 +15,39 @@ const daysOfWeek = [
   "Friday",
   "Saturday",
 ];
-const events = student.courses.map((course) => {
-  return {
-    id: course.courseID,
-    title: course.courseName,
-    info: course, //store original json
-    daysOfWeek: course.courseDays.map((d) => daysOfWeek.indexOf(d)),
-    startTime: course.courseTime[0],
-    endTime: course.courseTime[1],
+
+function eventsMapping(courseList) {
+  return courseList.map((course) => {
+    return {
+      id: course.courseID,
+      title: course.courseName,
+      info: course, //store original json
+      daysOfWeek: course.courseDays.map((day) => daysOfWeek.indexOf(day)),
+      startTime: course.courseTime[0],
+      endTime: course.courseTime[1],
+    };
+  });
+}
+
+const addClass = (event, setEvents) => {
+  // example course
+  const courses = {
+    courses: [
+      {
+        courseID: 4,
+        courseName: "Electrical Circuit Anlys I Lab",
+        courseSub: "ECE",
+        courseNum: "1101L",
+        courseProf: ["Ali", "Ghaneh"],
+        courseTime: ["19:00", "21:50"],
+        courseDays: ["Thursday"],
+      },
+    ],
   };
-});
+  const newEvent = eventsMapping(courses.courses);
+  const doesContain = event.some((i) => i.id == newEvent[0].id);
+  if (!doesContain) setEvents(event.concat(newEvent));
+};
 
 const EventPopup = (props) => {
   const { eventInfo, isOpen, setOpen } = props;
@@ -61,7 +84,7 @@ const EventPopup = (props) => {
           </Box>
           <Box sx={{ color: "grey", fontSize: 13 }}>
             {event.courseDays.map((day) => (
-              <Box>
+              <Box key={day}>
                 {day} {event.courseTime[0]}-{event.courseTime[1]}
               </Box>
             ))}
@@ -75,11 +98,11 @@ const EventPopup = (props) => {
 const Calendar = () => {
   const [open, setOpen] = useState(false);
   const [popupInfo, setPopupInfo] = useState([]);
+  const [event, setEvents] = useState(eventsMapping(student.courses));
   const handleSelectEvent = useCallback((info) => {
     setPopupInfo(info.event);
     setOpen(true);
   }, []);
-
   return (
     <div className="container">
       <div
@@ -94,9 +117,21 @@ const Calendar = () => {
           allDaySlot={false}
           plugins={[timeGridPlugin]}
           initialView="timeGridWeek"
-          height="90%"
+          height={"90%"}
           eventClick={handleSelectEvent}
-          events={events}
+          events={event}
+          aspectRatio={"90%"}
+          customButtons={{
+            addClass: {
+              text: "Add Class",
+              click: () => addClass(event, setEvents),
+            },
+          }}
+          headerToolbar={{
+            left: "prev,next today",
+            center: "title",
+            right: "addClass",
+          }}
         />
       </div>
     </div>
