@@ -21,9 +21,9 @@ for (const x in student.courses){
 const HomePage = () => {
   return (
     <DashboardLayout>
-      <div style={{marginTop:'225px'}}>
+      <div style={{marginTop:'7.5vh'}}>
         <div style={{display:'flex', justifyContent:'center'}}>
-        <div className="background-div"></div>
+          <div className="background-div"></div>
           <div style={{}}>
             <div className="titles">
               CPP Scheduler
@@ -38,7 +38,6 @@ const HomePage = () => {
                 Courses
               </Link>
             </div>
-          </div>
             <div className="table">
               {StudentData.map((props) => {
                   return ( 
@@ -58,7 +57,8 @@ const HomePage = () => {
                     </div>
                   )
                 })}
-            </div>
+            </div>  
+          </div>  
         </div>
       </div>
     </DashboardLayout>
