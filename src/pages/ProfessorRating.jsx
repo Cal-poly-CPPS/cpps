@@ -11,7 +11,7 @@ import { useSearchParams } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 
 import "./ProfessorRating.css";
-
+//used this library https://www.npmjs.com/package/react-rating-stars-component for stars
 
 
 
@@ -67,7 +67,7 @@ const ProfessorRating = () => {
 
             <div className="enteringStars">
                 <div className="starsGroup">
-                    <button className="buttons-stars">Difficulty</button>
+                    <button className="buttons-stars" disabled>Difficulty</button>
                     <div className="stars">
                         <ReactStars
                         count={10}
@@ -78,7 +78,7 @@ const ProfessorRating = () => {
                     </div>
                 </div>
                 <div className="starsGroup">
-                    <button className="buttons-stars">Lecture</button>
+                    <button className="buttons-stars" disabled>Lecture</button>
                     
                     <div className="stars">
                         <ReactStars

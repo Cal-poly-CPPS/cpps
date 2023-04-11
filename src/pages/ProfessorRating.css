@@ -113,9 +113,9 @@ body {
   
     }
   
-    .buttons-stars:hover{
-      cursor: pointer;
-    }
+:disabled{
+  color: black;
+}
   
   .stars{
   
