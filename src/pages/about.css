@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-content {
+    position: relative;
+    padding: 10px;
+    color: white;
+    background-color: #282c34;
+    border-radius: 5px;
+    width: 700px;
+    margin-left: 20px;
+    border: white;
+    border-width: 1px;
+    border-style: solid;
+    box-shadow: 5px 10px 10px black;
+}
+ #about-image {
+    width: 314px;
+    height: 418px;
+    border-radius: 5px;
+    box-shadow: 5px 10px 10px;
+}

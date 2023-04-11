@@ -10,15 +10,17 @@ import CalendarPage from "./calendarpage";
 import Courses from "./courses";
 import Professor from "./professor";
 import ProfessorPage from "./professorPage";
-import CoursesPage from "./coursesPage";
+import CoursesUploadPage from "./coursesUploadPage";
 import SearchTest from "./searchTest";
 
 
+import ProfessorRating from "./ProfessorRating";
 
 const Routers = () => {
   return (
     <BrowserRouter>
       <Routes>
+
         <Route path="/about/members" element={<MembersPage />}/>
         <Route path="/about/projects" element={<ProjectsPage />}/>
         <Route path="/about" element={<AboutPage />}/>
@@ -30,8 +32,13 @@ const Routers = () => {
         <Route path="/courses" element={<Courses />}/> 
         <Route path="/professor" element={<Professor />}/> 
         <Route path="/professorPage" element={<ProfessorPage />}/>
-        <Route path="/coursesPage" element={<CoursesPage />}/>
+        <Route path="/coursesUploadPage" element={<CoursesUploadPage />}/>
         <Route path="/searchTest" element={<SearchTest />}/>
+        <Route path="/ProfessorRating" element={<ProfessorRating />} />
+
+        
+
+
 
       </Routes>
     </BrowserRouter>

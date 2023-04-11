@@ -49,8 +49,6 @@
   height: 36.5px;
   background-color: #707070;
   border-radius: 0 0 50% 50% / 0 0 100% 100%;
-  
-  
   text-align: center;
   vertical-align: top;
   overflow: hidden;
@@ -89,7 +87,7 @@ p {
 
 .professorName{
     font-size: 45px;
-    font-weight: 350;
+    font-weight: lighter;
     align-Items: flex-end;
     margin: 5px;
 }

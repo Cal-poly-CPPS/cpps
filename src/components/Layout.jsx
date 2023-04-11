@@ -12,7 +12,7 @@ export const DashboardLayout = ({ children }) => {
     { label: 'Professors', path: '/professor' },
     { label: 'Courses', path: '/courses' },
     { label: 'ProfessorPage', path: '/professorPage' },
-    { label: 'CoursesPage', path: '/coursesPage' },
+    { label: 'CoursesUploadPage', path: '/coursesUploadPage' },
     { label: 'Search Test', path: '/searchTest' },
   ];
 
