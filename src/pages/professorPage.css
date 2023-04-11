@@ -1,6 +1,6 @@
 .outbox {
     border-radius: 25px;
-    background: #FFFFFF;
+    background: lightgray;
     margin-left: 5%;
     margin-right:5%;
     margin-top: 5%;
@@ -14,7 +14,7 @@
   }
 
 .inbox {
-  background: #ffffff;
+  background: lightgray;
   padding: 20px;
   scroll-behavior: smooth;
   /* border: 5px solid; */
@@ -123,12 +123,21 @@ p {
 .buttonProp{
     background-color: lightgrey;
     border-radius: 20px;
-    border: 2px solid gray;
+    border: 1px solid gray;
     max-width: 20%;
     width: fit-content;
     font-size: 17.5px;
     padding: 20px;
-    justify-self: right;
+    margin-left: 25%;
+    cursor: pointer;
+}
+
+.buttonProp:hover{
+  transform: scale(.99);
+}
+
+.buttonProp:active{
+  transform: scale(.97);
 }
 
 .break{
