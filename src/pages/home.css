@@ -17,10 +17,12 @@
     font-family: lato;
     text-align: center;
     background-color: white;
-    margin-top: 10%;
+    margin-top: 7.5%;
     border-radius: 10px;
     position:relative;
     box-shadow: 0px 3px 5px;
+    width: 250px;
+    margin: 3.5vh auto;
 }
 
 .buttons:hover {
@@ -34,13 +36,13 @@
 .table {
     align-items: center;
     display: table;
-    position: absolute;
+    position: relative;
     padding: 10px;
     background-color: white;
     border-radius:  10px;
     width: 600px;
-    margin-top: 350px;
     box-shadow: 0px 3px 5px;
+    margin-top: 10%;
 }
 
 .row {
@@ -59,13 +61,13 @@
 
 .background-div {
     position: absolute;
-    height: 875px;
+    height: 800px;
     width: 800px;
     border-radius: 20px;
     border: white;
     border-width: 2px;
     border-style: solid;
-    top: 150px;
     background-color: #282c34;
     box-shadow: 0px 3px 10px;
+    top: 5vh;
 }
