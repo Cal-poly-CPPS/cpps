@@ -10,7 +10,9 @@ import CalendarPage from "./calendarpage";
 import Courses from "./courses";
 import Professor from "./professor";
 import ProfessorPage from "./professorPage";
+import CoursesPage from "./coursesPage";
 import SearchTest from "./searchTest";
+
 
 
 const Routers = () => {
@@ -28,6 +30,7 @@ const Routers = () => {
         <Route path="/courses" element={<Courses />}/> 
         <Route path="/professor" element={<Professor />}/> 
         <Route path="/professorPage" element={<ProfessorPage />}/>
+        <Route path="/coursesPage" element={<CoursesPage />}/>
         <Route path="/searchTest" element={<SearchTest />}/>
 
       </Routes>
