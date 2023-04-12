@@ -24,6 +24,15 @@ const ProfessorRating = () => {
     const [searchParams, setSearchParams] = useSearchParams();
     const [data, setData] = useState([]);
     console.log(data);
+    const [review,setReview] = useState("");
+    const [isLoading,setIsLoading] = useState(false);
+    const [error,setError] = useState(null);
+    const [rating,setRating]=useState({
+        difficulty: 0,
+        lecture: 0,
+        grade: "",
+        courses: "",
+    });
 
     useEffect(() => { 
         console.log("logging this here")
@@ -37,46 +46,49 @@ const ProfessorRating = () => {
     //console.log('https://pgmflm8t6g.execute-api.us-west-2.amazonaws.com/cpps/cpps/'.concat(searchParams.get("name")));
        console.log(data);
 
-    const [test, setTest]=useState([]);
+
     
     //setTest(JSON.stringify(data));
 
-    const ReviewForm = () => {
-        const ratingChanged = (newRating) => {
-        // Handle rating change logic here
+    const ratingChanged = (newRating) => {
+        //Handle rating change logic here
         console.log(newRating);
-        };
+    }
 
-        const handleSubmit = (e) => {
-            e.preventDefault();
-        
-            // Reset error state
-            setError(null);
-        
-            // API call to submit review
-            setIsLoading(true);
-            axios
-              .post("/api/rateProfessor", { review })
-              .then((response) => {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        //Reset error state
+        setError(null);
+
+        //API call to submit review
+        setIsLoading(true);
+        axios
+            .post("/api/rateProfessor", { review })
+            .then((response) => {
                 setIsLoading(false);
-                // Handle success, e.g. show success message to user
+                //Handle success, show success message to user
                 console.log("Review submitted successfully!");
-              })
-              .catch((error) => {
+            })
+            .catch((error) => {
                 setIsLoading(false);
-                // Handle error, e.g. set error state and display error message to user
+                //Handle error, set error state and display error message to user
                 setError("Failed to submit review. Please try again later.");
                 console.error("Failed to submit review:", error);
-              });
-          };
-
-
+            });
+    };
+//ongoing modified
           return (
             <div>
               <DashboardLayout>
                 <div className="container">
-                  <h1>Rate Professor</h1>
-                  <p>Write a review for your professor</p>
+                    <Row>
+                        <Col xs={12}>
+                            <h1>Rate Professor</h1>
+                            <p>Write a review for your professor</p>
+                        </Col>
+                    </Row>
+                        
                   <div className="formContainer">
                     <div className="formBox">
                       <form onSubmit={handleSubmit}>
@@ -109,7 +121,8 @@ const ProfessorRating = () => {
                       <div className="stars">
                         <ReactStars
                           count={10}
-                          onChange={ratingChanged}
+                          value={rating.difficulty} // update with the actual value from data
+                          onChange={(newRating) => setRating({ ...rating, difficulty: newRating })} // update rating state
                           size={20}
                           activeColor="#ffd700"
                         />
@@ -120,7 +133,8 @@ const ProfessorRating = () => {
                       <div className="stars">
                         <ReactStars
                           count={10}
-                          onChange={ratingChanged}
+                          value={rating.lecture} // update with the actual value from data
+                          onChange={(newRating) => setRating({ ...rating, lecture: newRating })} // update rating state
                           size={20}
                           activeColor="#ffd700"
                         />
@@ -131,14 +145,24 @@ const ProfessorRating = () => {
                       <div className="starsGroup">
                         <div className="gradeText">Your Grade</div>
                         <div className="stars">
-                          <input className="gradeInput" placeholder="Enter here..." />
+                          <input 
+                            className="gradeInput" 
+                            placeholder="Enter here..." 
+                            value={rating.grade} // update actual value from data
+                            onChange={(e) => setRating({ ...rating, grade: e.target.value })} // update rating state
+                            />
                         </div>
                       </div>
           
                       <div className="starsGroup">
                         <div className="gradeText">Courses</div>
                         <div className="stars">
-                          <input className="gradeInput" placeholder="Enter here..." />
+                          <input 
+                            className="gradeInput" 
+                            placeholder="Enter here..." 
+                            value={rating.courses} //update with the actual value from data
+                            onChange={(e) => setRating({ ...rating, courses: e.target.value })} // update rating state
+                            />
                         </div>
                       </div>
                     </div>
@@ -150,9 +174,13 @@ const ProfessorRating = () => {
                     </div>
           
                     <div className="writtenRatings">
-                      <form /*onSubmit={function}*/>
+                      <form onSubmit={handleSubmit}>
                         <div>
-                          <textarea placeholder="Type Here..."></textarea>
+                          <textarea 
+                            placeholder="Type Here..."
+                            value={review}
+                            onChange={(e) => setReview(e.target.value)}
+                            ></textarea>
                         </div>
                         <button className="buttons-stars" type="submit">Submit</button>
                       </form>
@@ -167,6 +195,7 @@ const ProfessorRating = () => {
           );
           }
 
+export default ProfessorRating;
 /*
   return (
 
@@ -251,7 +280,7 @@ const ProfessorRating = () => {
     
     </div>
   );*/
-};
 
 
-export default ProfessorRating;
+
+
