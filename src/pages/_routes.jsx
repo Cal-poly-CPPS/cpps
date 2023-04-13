@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import SettingsPage from "./settings";
 import ProjectsPage from "./projects";
 import MembersPage from "./members";
@@ -18,7 +18,7 @@ import ProfessorRating from "./ProfessorRating";
 
 const Routers = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
 
         <Route path="/about/members" element={<MembersPage />}/>
@@ -41,7 +41,7 @@ const Routers = () => {
 
 
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
