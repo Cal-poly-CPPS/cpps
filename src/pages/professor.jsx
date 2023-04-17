@@ -2,7 +2,7 @@ import React from "react";
 import { DashboardLayout } from "../components/Layout";
 
 import "./searchPageProperties.css";
-import SearchBar from "../components/SearchBar";
+import SearchBar from "../components/search/SearchBar";
 
 
 const ProfessorSearch = () => {
@@ -11,7 +11,7 @@ const ProfessorSearch = () => {
     <div className="App">
 
 
-    <div style={{backgroundColor: "gray", display: "flex", flexDirection: "column", alignItems: "center", padding: "5px"}}>
+    <div style={{backgroundColor: "white", display: "flex", flexDirection: "column", alignItems: "center", padding: "5px"}}>
       <div id='search-title'>
         Search for Professors
       </div>

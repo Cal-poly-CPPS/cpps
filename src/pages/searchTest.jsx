@@ -1,7 +1,7 @@
 import React from "react";
 import { DashboardLayout } from "../components/Layout";
 import "./searchTest.css";
-import SearchBar from "../components/SearchBar";
+import SearchBar from "../components/search/SearchBar";
 
 
 const ProfessorSearch = () => {

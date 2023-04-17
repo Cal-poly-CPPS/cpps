@@ -29,7 +29,7 @@ function SearchBarCom({ options }) {
       {filteredOptions.length > 0 && (
         <ul className="search-bar-dropdown">
           {filteredOptions.map((option, index) => (
-            <li key={index}>{<NavLink to={"/professorPage/?name=".concat(option)} >{option}</NavLink>}</li>
+            <li key={index}>{<NavLink style={{backgroundColor:'black'}}to={"/professorPage/?name=".concat(option.replace(/ /g,"_"))} ><button style={{width:'100%', bordercolor:'white', height:'50px'}}>{option}</button></NavLink>}</li>
           ))}
         </ul>
       )}

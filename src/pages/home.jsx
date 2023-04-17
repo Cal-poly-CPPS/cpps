@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import "./home.css"
 import { DashboardLayout } from "../components/Layout";
 import Calendar from "../components/Calendar";
-
+import SearchBar from "../components/search/SearchBar"
 import { Col, Container, Row } from 'react-bootstrap';
 import student from "../components/weeklyScheduleExample.json";
 import { flexbox } from "@mui/system";
@@ -20,25 +20,26 @@ for (const x in student.courses){
 
 const HomePage = () => {
   return (
-    <DashboardLayout>
-      <div style={{marginTop:'7.5vh'}}>
-        <div style={{display:'flex', justifyContent:'center'}}>
-          <div className="background-div"></div>
-          <div style={{}}>
-            <div className="titles">
-              CPP Scheduler
-            </div>
-            <div className="buttons">
-              <Link style={{textDecoration:'none', color:'black'}} to="/professor">
-                Professors
-              </Link>
-            </div>
-            <div className="buttons">
-              <Link style={{textDecoration:'none', color:'black'}} to="/courses">
-                Courses
-              </Link>
-            </div>
-            <div className="table">
+    
+
+      <div style={{backgroundColor:'white'}}>
+        <link rel="stylesheet" href="https://use.typekit.net/yba0jeu.css"/>
+        
+        {/*the top bar navigation */}
+
+        <DashboardLayout/>
+        <div style={{display:'flex', justifyContent:'center', backgroundColor:'white'}}>
+          
+        <div>
+          <div style={{color:'black', margins:'auto', fontSize:'100px', justifyContent:'center', textAlign:'center', paddingTop:'200px'}}>
+            CPP Fori
+          </div>
+
+          <SearchBar></SearchBar>
+          </div>
+        </div>
+
+        <div className="table">
               {StudentData.map((props) => {
                   return ( 
                     <div className="row">
@@ -57,11 +58,10 @@ const HomePage = () => {
                     </div>
                   )
                 })}
-            </div>  
-          </div>  
-        </div>
+            </div>    
+   
       </div>
-    </DashboardLayout>
+    
   );
 };
 

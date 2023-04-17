@@ -36,13 +36,17 @@
 .table {
     align-items: center;
     display: table;
-    position: relative;
+    position: absolute;
     padding: 10px;
     background-color: white;
-    border-radius:  10px;
+    right: 0px;
     width: 600px;
-    box-shadow: 0px 3px 5px;
-    margin-top: 10%;
+    border-collapse: collapse;
+    border: none;
+    top: 200px;
+    border-style : hidden!important;
+    margin-top: 0%;
+    border-color: white;
 }
 
 .row {
@@ -55,8 +59,7 @@
     display: table-cell;
     padding: 3px;
     border-width: 1px;
-    border-color: black;
-    border-style: solid; 
+    
 }
 
 .background-div {
@@ -64,10 +67,41 @@
     height: 800px;
     width: 800px;
     border-radius: 20px;
-    border: white;
     border-width: 2px;
     border-style: solid;
-    background-color: #282c34;
+    background-color: white;
     box-shadow: 0px 3px 10px;
-    top: 5vh;
+    top: 24px;
+    
 }
+
+.topbar {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+  }
+  
+  .topbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 20px;
+  }
+  
+  .topbar-left a {
+    font-weight: bold;
+  }
+  
+  .topbar-center {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .topbar-right {
+    display: flex;
+    justify-content: flex-end;
+  }

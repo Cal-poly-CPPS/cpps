@@ -5,6 +5,7 @@ import { Box, Dialog, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import student from "./weeklyScheduleExample.json";
 import "./Cal.css";
+import {DashboardLayout} from "./Layout";
 
 const daysOfWeek = [
   "Sunday",
@@ -57,6 +58,7 @@ const EventPopup = (props) => {
   useEffect(() => setOpen(isOpen), [isOpen]);
 
   return (
+    
     <Dialog
       fullWidth={true}
       maxWidth={"sm"}
@@ -64,6 +66,8 @@ const EventPopup = (props) => {
       onClose={handleClose}
       hideBackdrop={true}
     >
+      
+      
       {event && (
         <Box p={2}>
           <Box display="flex" alignItems="center">
@@ -104,7 +108,10 @@ const Calendar = () => {
     setOpen(true);
   }, []);
   return (
-    <div className="container">
+    <div>
+      <DashboardLayout/>
+    
+    <div className="" style={{paddingTop:'90px', height:'80vh'}}>
       <div
         style={{
           backgroundColor: "white",
@@ -134,6 +141,8 @@ const Calendar = () => {
           }}
         />
       </div>
+    </div>
+
     </div>
   );
 };

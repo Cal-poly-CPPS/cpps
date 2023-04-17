@@ -1,13 +1,14 @@
 import React, { useState, useEffect }  from 'react';
 import { BiSearch } from "react-icons/bi";
 import "./SearchBar.css"
-import "./prof.json"
-import SearchBarCom from './search/SearchBarCom';
+import "../prof.json"
+import SearchBarCom from './SearchBarCom';
 
 
 const SearchBar = () => {
   const options = [
     "jamie",
+    "Test value",
     "Laurie Riggs",
     "Patricia Hale",
     "David Speak",

@@ -1,7 +1,6 @@
 import React from "react";
 
 import { NavSidebar } from "./NavSidebar";
-import BodyWrapper from "./BodyWrapper";
 import {fetchData} from './AwsFunctions';
 
 
