@@ -50,14 +50,14 @@ export const DashboardLayout = ({ children }) => {
       <div style={{justifyContent:'right', display:'flex', width:'20%', color:'white', paddingTop:'', paddingRight:'40px'}}>
       
       {!isLogged ?  
-      
-      <NavLink to={'./login'} style={{ textDecoration:'none', color:'white', fontFamily:'sans-serif', paddingTop:'15px', justifyContent:'center', fontWeight:'100', fontStyle:'normal', paddingLeft:'70px', fontSize:'20px', color:'white',}}>
-          Sign in
-      </NavLink>  
-      
+      <button style={{backgroundColor:'transparent', color:'white', fontFamily:'sans-serif', paddingTop:'5px', justifyContent:'center', fontWeight:'100', fontStyle:'normal', paddingLeft:'70px', fontSize:'20px', color:'white', borderStyle:'none'}}>
+        <NavLink to={'/login'} style={{textDecoration:'none', color:'white'}}>
+            Sign in
+        </NavLink>  
+      </button>
       :       
-      <button onClick = {signOut} style={{ backgroundcolor:'none', textDecoration:'none', color:'white', fontFamily:'sans-serif', paddingTop:'15px', justifyContent:'center', fontWeight:'100', fontStyle:'normal', paddingLeft:'70px', fontSize:'20px', color:'white',}}>
-          Exit
+      <button onClick = {signOut} style={{backgroundColor:'transparent', color:'white', fontFamily:'sans-serif', paddingTop:'5px', justifyContent:'center', fontWeight:'100', fontStyle:'normal', paddingLeft:'70px', fontSize:'20px', color:'white', borderStyle:'none'}}>
+          Sign out
       </button> 
       }
 

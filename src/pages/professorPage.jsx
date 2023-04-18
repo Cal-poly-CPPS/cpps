@@ -91,7 +91,7 @@ const ProfessorPage = () => {
                     </div>
                   </div>
                   <div style={{paddingLeft:'10px', paddingTop:'10px'}}>
-                    <NavLink to={'../ProfessorRating/?name='.concat(searchParams.get("name"))}><button style={{fontSize:'20px', justifyContent:'left', paddingLeft:'0px', borderRadius:'20px', padding:'10px'}}>Rate This Professor</button></NavLink>
+                    <NavLink to={'/ProfessorRating/?name='.concat(searchParams.get("name"))}><button style={{fontSize:'20px', justifyContent:'left', paddingLeft:'0px', borderRadius:'20px', padding:'10px'}}>Rate This Professor</button></NavLink>
                   </div>
                   <div style={{height:'50%', overflow:'auto'}}>
                     <div style={{whiteSpace:"pre-wrap", paddingLeft:'50px'}}>
