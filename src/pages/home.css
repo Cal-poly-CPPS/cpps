@@ -36,17 +36,20 @@
 .table {
     align-items: center;
     display: table;
-    position: absolute;
+    position: relative;
     padding: 10px;
     background-color: white;
-    right: 0px;
-    width: 600px;
+    width: 33%;
     border-collapse: collapse;
     border: none;
-    top: 200px;
     border-style : hidden!important;
-    margin-top: 0%;
     border-color: white;
+}
+
+.table.default {
+    position: absolute;
+    right: 5px;
+    top: 20vh;
 }
 
 .row {
@@ -59,19 +62,6 @@
     display: table-cell;
     padding: 3px;
     border-width: 1px;
-}
-
-.background-div {
-    position: absolute;
-    height: 800px;
-    width: 800px;
-    border-radius: 20px;
-    border-width: 2px;
-    border-style: solid;
-    background-color: white;
-    box-shadow: 0px 3px 10px;
-    top: 24px;
-    
 }
 
 .topbar {

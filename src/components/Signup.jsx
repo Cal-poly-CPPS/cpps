@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { CognitoUserPool, CognitoUserAttribute, CognitoUser } from "amazon-cognito-identity-js";
 import {DashboardLayout} from  "./Layout";
+import { useMediaQuery } from "react-responsive";
 
 const Signup = () => {
+
   const [formState, setFormState] = useState({
     username: "",
     email: "",
@@ -97,13 +99,16 @@ const Signup = () => {
     }
   };
 
+  const desktopScreen = useMediaQuery({ query: '(min-width: 1024px)' });
+  const mobileScreen = useMediaQuery({ query: '(max-width: 1024px)' });
+
   return (
 
     <div>
       <link rel="stylesheet" href="https://use.typekit.net/yba0jeu.css"/>
 
       <DashboardLayout/>
-      <div style = {{width:'100%', height:'80%', paddingTop:'200px'}}>
+      {desktopScreen && <div style = {{width:'100%', height:'80%', paddingTop: '200px'}}>
         <div style={{backgroundColor:'white', width:'500px', justifyContent:'center', alignContent:'center', height:'600px', margin:'auto', borderRadius:"5px", borderStyle:'solid', borderWidth:'1px'}}>
           <div style={{fontSize:'60px', color:'black', fontFamily:'sans-serif', paddingTop:'15px', justifyContent:'center', fontWeight:'100', fontStyle:'normal', textAlign:'center'}}>CPP Fori</div>
         
@@ -179,7 +184,83 @@ const Signup = () => {
 
       </form>
         </div>
-      </div>
+      </div>}
+
+      {mobileScreen && <div style = {{width:'100%', height:'80%', paddingTop: '8vh', display:'flex', justifyContent:'center', alignContent:'center'}}>
+        <div style={{backgroundColor:'white', width:'500px', justifyContent:'center', alignContent:'center', height:'600px', margin:'auto', borderRadius:"5px", borderStyle:'solid', borderWidth:'1px', transform:'scale(0.75)'}}>
+          <div style={{fontSize:'60px', color:'black', fontFamily:'sans-serif', paddingTop:'15px', justifyContent:'center', fontWeight:'100', fontStyle:'normal', textAlign:'center'}}>CPP Fori</div>
+        
+        <form onSubmit={handleSubmit} > 
+        
+        <label>
+          <input
+            type="text"
+            style={{marginTop:'20px', backgroundColor:'#ebebeb', width:'90%', borderRadius:'5px', height:'40px', paddingLeft:'20px'}}
+            name="username"
+            value={formState.username}
+            onChange={handleChange}
+            required
+            placeholder="Username"
+          />
+        </label>
+        <br />
+        <label >
+          <input
+            type="email"
+            style={{marginTop:'20px', backgroundColor:'#ebebeb', width:'90%', borderRadius:'5px', height:'40px', paddingLeft:'20px'}}
+            name="email"
+            value={formState.email}
+            onChange={handleChange}
+            required
+            placeholder="Email"
+          />
+        </label>
+        <br />
+        <label>
+          <input
+            type="password"
+            name="password"
+            style={{marginTop:'20px', backgroundColor:'#ebebeb', width:'90%', borderRadius:'5px', height:'40px', paddingLeft:'20px'}}
+            value={formState.password}
+            onChange={handleChange}
+            required
+            placeholder="Password"
+          />
+        </label>
+        <br />
+        <label>
+          <input
+            type="password"
+            name="confirmPassword"
+            value={formState.confirmPassword}
+            onChange={handleChange}
+            required
+            style={{marginTop:'20px', backgroundColor:'#ebebeb', width:'90%', borderRadius:'5px', height:'40px', paddingLeft:'20px'}}
+            placeholder="Confirm Password"
+          />
+        </label>
+        <br />
+        <button type="submit" style={{width:'90%', marginLeft:'3%', marginTop:'4%', height:'40px'}} >Sign up</button>
+      </form>
+      <br />
+      <form onSubmit={handleConfirmationSubmit}>
+        <label>
+          <input
+            type="text"
+            name="confirmationCode"
+            value={formState.confirmationCode}
+            onChange={handleChange}
+            required
+            placeholder="Verification Code"
+            style={{marginTop:'20px', backgroundColor:'#ebebeb', width:'90%', borderRadius:'5px', height:'40px', paddingLeft:'20px'}}
+          />
+        </label>
+        <br />
+        <button type="submit" style={{width:'90%', marginLeft:'3%', marginTop:'4%', height:'40px'}}>Verify</button>
+
+      </form>
+        </div>
+      </div>}
     </div>
 
   );
