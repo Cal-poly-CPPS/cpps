@@ -19,6 +19,7 @@
     "aws-sdk": "^2.1359.0",
     "axios": "^1.3.5",
     "bootstrap": "^5.2.3",
+    "crypto-js": "^4.1.1",
     "react": "^17.0.0",
     "react-bootstrap": "^2.7.2",
     "react-datalist-field": "^20.3.1",

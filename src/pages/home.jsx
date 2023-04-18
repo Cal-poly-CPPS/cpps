@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, NavLink } from 'react-router-dom';
 import "./home.css"
 import { DashboardLayout } from "../components/Layout";
@@ -7,9 +7,14 @@ import SearchBar from "../components/search/SearchBar"
 import { Col, Container, Row } from 'react-bootstrap';
 import student from "../components/weeklyScheduleExample.json";
 import { flexbox } from "@mui/system";
+import {isAuthenticated} from "../components/Login";
+
 
 
 const StudentData = []
+
+
+
 
 for (const x in student.courses){
   console.log((student.courses)[x])
@@ -19,6 +24,14 @@ for (const x in student.courses){
 
 
 const HomePage = () => {
+  
+  const [isLogged, setisLogged] = useState(false);
+
+  useEffect(() => { 
+
+    setisLogged(isAuthenticated())
+  }, []);
+
   return (
     
 

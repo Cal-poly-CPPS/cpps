@@ -1,10 +1,22 @@
-import React from "react";
+
+import React, { useState, useEffect } from "react";
 
 import { NavSidebar } from "./NavSidebar";
 import BodyWrapper from "./BodyWrapper";
 import { Link, NavLink } from 'react-router-dom';
-
+import {isAuthenticated, signOut} from './Login'
 export const DashboardLayout = ({ children }) => {
+
+  const [isLogged, setisLogged] = useState(false);
+
+  useEffect(() => { 
+    setisLogged(isAuthenticated())
+  }, []);
+
+
+
+
+
   return (
     <div>
     <link rel="stylesheet" href="https://use.typekit.net/yba0jeu.css"/>
@@ -35,10 +47,21 @@ export const DashboardLayout = ({ children }) => {
         </NavLink>
       </div>
 
-      <div style={{justifyContent:'right', display:'flex', width:'20%', color:'white', paddingTop:'15px', paddingRight:'40px'}}>
-      <NavLink style={{ textDecoration:'none', color:'white'}}>
+      <div style={{justifyContent:'right', display:'flex', width:'20%', color:'white', paddingTop:'', paddingRight:'40px'}}>
+      
+      {!isLogged ?  
+      
+      <NavLink to={'./login'} style={{ textDecoration:'none', color:'white', fontFamily:'sans-serif', paddingTop:'15px', justifyContent:'center', fontWeight:'100', fontStyle:'normal', paddingLeft:'70px', fontSize:'20px', color:'white',}}>
           Sign in
       </NavLink>  
+      
+      :       
+      <button onClick = {signOut} style={{ backgroundcolor:'none', textDecoration:'none', color:'white', fontFamily:'sans-serif', paddingTop:'15px', justifyContent:'center', fontWeight:'100', fontStyle:'normal', paddingLeft:'70px', fontSize:'20px', color:'white',}}>
+          Exit
+      </button> 
+      }
+
+
       </div>
 
     </div>

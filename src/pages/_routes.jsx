@@ -15,6 +15,8 @@ import SearchTest from "./searchTest";
 import Classes from "./classes"
 import Login from "../components/Login"
 import ProfessorRating from "./ProfessorRating";
+import Signup from "../components/Signup"
+
 
 const Routers = () => {
   return (
@@ -22,7 +24,7 @@ const Routers = () => {
       <Routes>
 
         <Route path="/about/members" element={<MembersPage />}/>
-        
+        <Route path="/signup" element={<Signup />}/>
         <Route path="/about/projects" element={<ProjectsPage />}/>
         <Route path="/about" element={<AboutPage />}/>
         <Route path="/another/teams" element={ <TeamsPage />}/>
@@ -34,7 +36,7 @@ const Routers = () => {
         <Route path="/professorPage" element={<ProfessorPage />}/>
         <Route path="/coursesUploadPage" element={<CoursesUploadPage />}/>
         <Route path="/ProfessorRating" element={<ProfessorRating />} />
-
+        <Route path="/login" element={<Login />} />
         <Route path="/classes" element={<Classes />}/>
 
 
