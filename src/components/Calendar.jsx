@@ -36,10 +36,10 @@ const addClass = (event, setEvents) => {
     courses: [
       {
         courseID: -1,
-        courseName: "Electrical Circuit Anlys I Lab",
-        courseSub: "ECE",
-        courseNum: "1101L",
-        courseProf: ["Ali", "Ghaneh"],
+        courseName: "courseName",
+        courseSub: "courseSub",
+        courseNum: "courseNum",
+        courseProf: ["first", "last"],
         courseTime: ["19:00", "21:50"],
         courseDays: ["Friday"],
       },
