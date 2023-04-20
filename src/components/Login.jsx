@@ -6,7 +6,7 @@ import {DashboardLayout} from  "./Layout"
 import { Link, NavLink } from 'react-router-dom';
 
 
-const userPool = new CognitoUserPool({
+export const userPool = new CognitoUserPool({
   UserPoolId: 'us-west-2_YAGfQbS3O',
   ClientId: '6engdt815h1efv4ktb1fp8e9to'
 });
@@ -15,12 +15,18 @@ export const isAuthenticated = () => {
   const currentUser = userPool.getCurrentUser();
   return currentUser !== null;
 };
+export const userData= () => {
+  const currentUser = userPool.getCurrentUser();
+  return currentUser;
+};
 
 
 
 
 
-const updateUserData = (username, classes) => {
+
+
+export const updateUserData = (username, classes) => {
   const poolData = {
     UserPoolId: "us-west-2_YAGfQbS3O",
     ClientId: "6engdt815h1efv4ktb1fp8e9to",
@@ -52,7 +58,7 @@ const updateUserData = (username, classes) => {
   });
 };
 
-const getUserAttributes = () => {
+export  const getUserAttributes = () => {
   // get the user pool instance
   const userPool = new CognitoUserPool({
     UserPoolId: "us-west-2_YAGfQbS3O",
@@ -135,8 +141,11 @@ const Login = () => {
     cognitoUser.authenticateUser(authDetails, {
       onSuccess: (result) => {
         console.log('Authentication successful:', result);
+
         window.location.href = "/";
         setSuccess(false);
+
+
 
         // do something upon successful authentication, e.g. redirect to a protected page
       },

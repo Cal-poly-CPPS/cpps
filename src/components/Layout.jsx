@@ -24,7 +24,7 @@ export const DashboardLayout = ({ children }) => {
         
 
     <div style={{position:'absolute', backgroundColor:'black', width:'100%', height:'55px', display:'flex'}}>
-      <NavLink to={'/home'} style={{ textDecoration:'none', width:'20%'}}>
+      <NavLink to={'/'} style={{ textDecoration:'none', width:'20%'}}>
         <div style={{borderColor:'black', fontSize:'20px', color:'white', fontFamily:'sans-serif', paddingTop:'15px', paddingLeft:'25px', fontWeight:'100', fontStyle:'normal'}}>
           CPP Fori
         </div>
@@ -38,7 +38,7 @@ export const DashboardLayout = ({ children }) => {
         </NavLink>
         <NavLink to={'/classes'} style={{ textDecoration:'none'}}>
         </NavLink>
-        <NavLink to={'/home'} style={{ textDecoration:'none'}}>
+        <NavLink to={'/'} style={{ textDecoration:'none'}}>
         </NavLink>
       </div>
 

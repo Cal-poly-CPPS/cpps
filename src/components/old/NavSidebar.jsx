@@ -25,7 +25,7 @@ export const NavSidebar = () => {
         <Link to={`/nav`} style={{textDecoration:'none'}}>
           <div style={{color:'black', width:'300px', height:'100px', borderStyle:'solid', borderTopWidth:'1px',borderLeft:'0',borderRight:'0', borderBottomWidth:'1px', fontSize:'50px', textAlign:'center'}}>Planner</div>
         </Link>
-        <Link to={'/home'} style={{textDecoration:'none'}}>
+        <Link to={'/'} style={{textDecoration:'none'}}>
           <div>
             <div style={{color:'black', width:'300px', height:'80px', borderStyle:'solid', borderTop:'0',borderLeft:'0',borderRight:'0', borderBottomWidth:'1px', display:'flex', fontSize:30, alignItems:'center', }} className="menuitem">
                 <div style={{paddingLeft:'25px', userSelect:'none'}}>

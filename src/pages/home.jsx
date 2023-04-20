@@ -9,12 +9,11 @@ import SearchBar2 from "../components/courses/SearchBar"
 import { Col, Container, Row } from 'react-bootstrap';
 import student from "../components/weeklyScheduleExample.json";
 import { flexbox } from "@mui/system";
-import {isAuthenticated} from "../components/Login";
+import {isAuthenticated, userData} from "../components/Login";
 
 
 
 const StudentData = []
-
 
 
 
@@ -28,8 +27,18 @@ for (const x in student.courses){
 const HomePage = () => {
   
   const [switcher, setSwitcher] = useState(true);
+  const [userdata, setUserdata] = useState();
+
+  useEffect(() => { 
+    try{
+    setUserdata(JSON.stringify(userData().username))}
+    catch(error){
+      setUserdata("guest")
+    }
+  }, []);
 
 
+  
   return (
     
 
@@ -56,6 +65,9 @@ const HomePage = () => {
           :
          ( <SearchBar2/>)}
 
+          </div>
+          <div style={{position:'absolute', bottom:'5px', right:'5px'}}>
+              {userdata}
           </div>
         </div>
         {/*

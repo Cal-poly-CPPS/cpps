@@ -9,6 +9,7 @@ import React, { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import axios from "axios";
 import ReactStars from "react-rating-stars-component";
+import SearchBar from "../components/search/SearchBar"
 
 import "./ProfessorRating.css";
 //used this library https://www.npmjs.com/package/react-rating-stars-component for stars
@@ -70,7 +71,7 @@ const ProfessorRating = () => {
       .catch((error) => {
         setIsLoading(false);
         //Handle error, set error state and display error message to user
-        setError("Failed to submit review. Please try again later.");
+        setError("Submission under review");
         console.error("Failed to submit review:", error);
       });
   };
