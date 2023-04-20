@@ -108,6 +108,22 @@ const ProfessorRating = () => {
               <div className="stars">
                 <ReactStars
                   count={10}
+                  value={rating.difficulty} // update with the actual value from data
+                  onChange={(newRating) =>
+                    setRating({ ...rating, difficulty: newRating })
+                  } // update rating state
+                  size={20}
+                  activeColor="#ffd700"
+                />
+              </div>
+            </div>
+            <div className="starsGroup">
+              <button className="buttons-stars" disabled>
+                Lecture
+              </button>
+              <div className="stars">
+                <ReactStars
+                  count={10}
                   value={rating.lecture} // update with the actual value from data
                   onChange={(newRating) =>
                     setRating({ ...rating, lecture: newRating })
@@ -133,19 +149,7 @@ const ProfessorRating = () => {
                 </div>
               </div>
 
-              <div className="starsGroup">
-                <div className="gradeText">Courses</div>
-                <div className="stars">
-                  <input
-                    className="gradeInput"
-                    placeholder="Enter here..."
-                    value={rating.courses} //update with the actual value from data
-                    onChange={(e) =>
-                      setRating({ ...rating, courses: e.target.value })
-                    } // update rating state
-                  />
-                </div>
-              </div>
+              
             </div>
           </div>
 

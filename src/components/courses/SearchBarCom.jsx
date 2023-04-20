@@ -22,14 +22,14 @@ function SearchBarCom({ options }) {
     <div className="search-bar-container">
       <input
         type="text"
-        placeholder="Search professors"
+        placeholder="Search Courses"
         value={searchTerm}
         onChange={handleInputChange}
       />
       {filteredOptions.length > 0 && (
         <ul className="search-bar-dropdown">
           {filteredOptions.map((option, index) => (
-            <li key={index}>{<NavLink forceRefresh = {true} style={{backgroundColor:'black'}}to={"/professorPage/?name=".concat(option.replace(/ /g,"_"))} ><button style={{width:'100%', bordercolor:'white', height:'50px'}}>{option}</button></NavLink>}</li>
+            <li key={index}>{<NavLink forceRefresh = {true} style={{backgroundColor:'black'}}to={"/classes/?name=".concat(option.replace(/ /g,"_"))} ><button style={{width:'100%', bordercolor:'white', height:'50px'}}>{option}</button></NavLink>}</li>
           ))}
         </ul>
       )}

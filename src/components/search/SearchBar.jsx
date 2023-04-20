@@ -5,10 +5,8 @@ import "../prof.json"
 import SearchBarCom from './SearchBarCom';
 
 
-const SearchBar = () => {
+const SearchBar2 = () => {
   const options = [
-    "jamie",
-    "Test value",
     "Laurie Riggs",
     "Patricia Hale",
     "David Speak",
@@ -817,4 +815,4 @@ const SearchBar = () => {
   )*/
 }
 
-export default SearchBar
+export default SearchBar2

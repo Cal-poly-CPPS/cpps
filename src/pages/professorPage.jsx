@@ -7,6 +7,7 @@ import student from "../components/weeklyScheduleExample.json";
 import { flexbox } from "@mui/system";
 import React, { useState, useEffect } from 'react';
 import { NavLink, useSearchParams } from "react-router-dom";
+import SearchBar from "../components/search/SearchBar"
 
 import ProfessorData from  './professorData.json';
 import ProfessorRatings from './professorRatings.json';
@@ -57,7 +58,7 @@ const ProfessorPage = () => {
         }
       }
       fetchData();
-    }, []);
+    }, [searchParams.get("name")]);
 
 
     console.log('https://pgmflm8t6g.execute-api.us-west-2.amazonaws.com/cpps/cpps/'.concat(searchParams.get("name")));
@@ -162,9 +163,12 @@ const ProfessorPage = () => {
           </div>
 
           
-          <div style={{paddingTop:'100px', width:'40%'}}>
+          <div style={{paddingTop:'100px', width:'30%', borderLeft:'solid'}}>
             <div style={{color:'black', fontSize:'50px', width:'100%'}}>
-              Files of interest
+              <div style={{marginLeft:'30%'}}>Search</div>
+              <div style={{position:'relative', top:'-25px'}}>
+              <SearchBar></SearchBar>
+              </div>
             </div>
           </div>
 
