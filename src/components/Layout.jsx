@@ -18,6 +18,7 @@ export const DashboardLayout = ({ children }) => {
 
 
   return (
+    <>
     <div>
     <link rel="stylesheet" href="https://use.typekit.net/yba0jeu.css"/>
         
@@ -66,5 +67,7 @@ export const DashboardLayout = ({ children }) => {
 
     </div>
     </div>
+    {children}
+    </>
   );
 };
