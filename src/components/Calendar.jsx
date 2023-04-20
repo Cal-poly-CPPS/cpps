@@ -1,7 +1,13 @@
 import { useState, useEffect, useCallback } from "react";
 import FullCalendar from "@fullcalendar/react";
 import timeGridPlugin from "@fullcalendar/timegrid";
-import { Box, Dialog, IconButton } from "@mui/material";
+import {
+  Autocomplete,
+  Box,
+  Dialog,
+  IconButton,
+  TextField,
+} from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import student from "./weeklyScheduleExample.json";
 import "./Cal.css";
@@ -30,7 +36,7 @@ function eventsMapping(courseList) {
   });
 }
 
-const addClass = (event, setEvents) => {
+const addClass = (event, setEvents, newCourses) => {
   // example course
   //const courses = { courses: [] };
   const courses = [];
@@ -54,7 +60,7 @@ const addClass = (event, setEvents) => {
       courseDays: ["Sunday"],
     }
   );
-  const newEvent = eventsMapping(courses);
+  const newEvent = eventsMapping(newCourses);
   const doesContain = event.some((i) => i.id == newEvent[0].id);
   if (!doesContain) setEvents(event.concat(newEvent));
 };
@@ -105,10 +111,61 @@ const EventPopup = (props) => {
   );
 };
 
+const AddClassPopup = (props) => {
+  const { isOpen, setOpen, event, setEvents } = props;
+  const handleClose = () => setOpen(false);
+  const newCourses = [];
+
+  newCourses.push(
+    {
+      courseID: -1,
+      courseName: "courseName",
+      courseSub: "courseSub",
+      courseNum: "courseNum",
+      courseProf: ["first", "last"],
+      courseTime: ["22:00", "24:00"],
+      courseDays: ["Saturday"],
+    },
+    {
+      courseID: -2,
+      courseName: "courseName1",
+      courseSub: "courseSub",
+      courseNum: "courseNum",
+      courseProf: ["first", "last"],
+      courseTime: ["22:00", "24:50"],
+      courseDays: ["Sunday"],
+    }
+  );
+  return (
+    <Dialog open={isOpen} onClose={handleClose}>
+      <IconButton
+        variant="contained"
+        onClick={handleClose}
+        sx={{ color: "red", position: "fixed", top: "1em", right: "1em" }}
+      >
+        <CloseIcon sx={{ fontSize: 40 }} />
+      </IconButton>
+      <Box p={1}>
+        <Autocomplete
+          sx={{ width: 500 }}
+          options={newCourses.map((course) => course.courseName)}
+          renderInput={(params) => <TextField {...params} label="Courses" />}
+          onChange={() => {
+            handleClose();
+            addClass(event, setEvents, newCourses);
+          }}
+        />
+      </Box>
+    </Dialog>
+  );
+};
+
 const Calendar = () => {
   const [open, setOpen] = useState(false);
-  const [popupInfo, setPopupInfo] = useState([]);
   const [event, setEvents] = useState(eventsMapping(student.courses));
+  const [addClassPopup, setAddClassPopup] = useState(true);
+  const [popupInfo, setPopupInfo] = useState([]);
+
   const handleSelectEvent = useCallback((info) => {
     setPopupInfo(info.event);
     setOpen(true);
@@ -135,6 +192,12 @@ const Calendar = () => {
           }}
         >
           <EventPopup eventInfo={popupInfo} isOpen={open} setOpen={setOpen} />
+          <AddClassPopup
+            isOpen={addClassPopup}
+            setOpen={setAddClassPopup}
+            event={event}
+            setEvents={setEvents}
+          />
           <FullCalendar
             allDaySlot={false}
             plugins={[timeGridPlugin]}
@@ -146,7 +209,8 @@ const Calendar = () => {
             customButtons={{
               addClass: {
                 text: "Add Class",
-                click: () => addClass(event, setEvents),
+                click: () => setAddClassPopup(true),
+                // click: () => addClass(event, setEvents),
               },
             }}
             headerToolbar={{
