@@ -37,14 +37,8 @@ export const DashboardLayout = ({ children }) => {
         </div>
         </NavLink>
         <NavLink to={'/classes'} style={{ textDecoration:'none'}}>
-        <div style={{borderColor:'black', fontSize:'20px', color:'white', fontFamily:'sans-serif', paddingTop:'15px', justifyContent:'center', fontWeight:'100', fontStyle:'normal', paddingLeft:'70px'}}>
-            Classes
-        </div>
         </NavLink>
         <NavLink to={'/home'} style={{ textDecoration:'none'}}>
-        <div style={{borderColor:'black', fontSize:'20px', color:'white', fontFamily:'sans-serif', paddingTop:'15px', justifyContent:'center', fontWeight:'100', fontStyle:'normal', paddingLeft:'70px'}}>
-            Search
-        </div>
         </NavLink>
       </div>
 
