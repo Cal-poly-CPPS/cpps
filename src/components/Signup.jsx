@@ -38,7 +38,7 @@ const Signup = () => {
     try {
       await new Promise((resolve, reject) => {
         userPool.signUp(
-          formState.username,
+          formState.email,
           formState.password,
           attributeList,
           null,
@@ -70,7 +70,7 @@ const Signup = () => {
     });
 
     const userData = {
-      Username: formState.username,
+      Username: formState.email,
       Pool: userPool,
     };
 
@@ -85,6 +85,7 @@ const Signup = () => {
           } else {
             console.log("User confirmed: ", result);
             resolve(result);
+            window.location.href = "/";
           }
         });
       });
@@ -109,17 +110,6 @@ const Signup = () => {
         
         <form onSubmit={handleSubmit} > 
         
-        <label>
-          <input
-            type="text"
-            style={{marginTop:'20px', backgroundColor:'#ebebeb', width:'90%', borderRadius:'5px', height:'40px', paddingLeft:'20px'}}
-            name="username"
-            value={formState.username}
-            onChange={handleChange}
-            required
-            placeholder="Username"
-          />
-        </label>
         <br />
         <label >
           <input
@@ -127,6 +117,8 @@ const Signup = () => {
             style={{marginTop:'20px', backgroundColor:'#ebebeb', width:'90%', borderRadius:'5px', height:'40px', paddingLeft:'20px'}}
             name="email"
             value={formState.email}
+            
+
             onChange={handleChange}
             required
             placeholder="Email"
@@ -158,7 +150,9 @@ const Signup = () => {
         </label>
         <br />
         <button type="submit" style={{width:'90%', marginLeft:'3%', marginTop:'4%', height:'40px'}} >Sign up</button>
-
+        <div>
+            Do not exit without verification. It will lead to account being 
+        </div>
        
       </form>
       <br />

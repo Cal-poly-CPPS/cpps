@@ -42,7 +42,9 @@ const ProfessorPage = () => {
 
     const [data, setData] = useState([]);
 
-    
+    const[isEmpty, setEmpty] = useState(true);
+
+
     useEffect(() => { 
       console.log(data);
       async function fetchData() {
@@ -50,7 +52,9 @@ const ProfessorPage = () => {
         const data = await response.json();
         setData(data);
         setLoading(false);
-        
+        if (data.Item.Reviews.L.user.L[0].S = "Filler"){
+            setEmpty(false);
+        }
       }
       fetchData();
     }, []);
@@ -76,7 +80,7 @@ const ProfessorPage = () => {
                 <div style={{display:'flex'}}>
                   <div>
                     <div style={{width:'100%', backgroundColor:'white'}}> 
-                        <div style={{fontSize:'50px', justifyContent:'left', paddingLeft:'0px'}}>{searchParams.get("name")}</div>
+                        <div style={{fontSize:'50px', justifyContent:'left', paddingLeft:'0px'}}>{searchParams.get("name").replace("_", " ")}</div>
                         {" "}
                         <div style={{margin: '7.5px'}}>{PageLoad(1,0)[2]}</div>
                         {/* <p>{PageLoad(0,0)[0].courses}</p> */}
@@ -91,7 +95,7 @@ const ProfessorPage = () => {
                     </div>
                   </div>
                   <div style={{paddingLeft:'10px', paddingTop:'10px'}}>
-                    <NavLink to={'/ProfessorRating/?name='.concat(searchParams.get("name"))}><button style={{fontSize:'20px', justifyContent:'left', paddingLeft:'0px', borderRadius:'20px', padding:'10px'}}>Rate This Professor</button></NavLink>
+                    <NavLink to={'/ProfessorRating/?name='.concat(searchParams.get("name").replace("_", ""))}><button style={{fontSize:'20px', justifyContent:'left', paddingLeft:'0px', borderRadius:'20px', padding:'10px'}}>Rate This Professor</button></NavLink>
                   </div>
                   <div style={{height:'50%', overflow:'auto'}}>
                     <div style={{whiteSpace:"pre-wrap", paddingLeft:'50px'}}>
@@ -124,27 +128,35 @@ const ProfessorPage = () => {
           </div>
             
           <div style={{overflow:'auto', height:'40%'}}>
-          {data.Item.Reviews.L.map((user) => (
-            <div style={{display:'flex', justifyContent:'left', paddingLeft:'100px'}}>
-              <div className='circle-box'>
-                <div className = 'semi-circle-top'>
-                  <div className='center'>
-                    {user.L[2].N}
-                  </div>
-                </div>
-                <div className = 'semi-circle-bottom'>
-                  <div className='center'>
-                    {user.L[3].N}
-                  </div>
-                </div>
-              </div>
-            <div style={{paddingLeft:'20px', display:'grid', width:'40%'}}>
-              <p>{"Course: "}{user.L[0].S}</p>
-              <p>{user.L[1].S}</p>
-            </div>  
-              
+            {!isEmpty? 
+                        <div>
+                        {data.Item.Reviews.L.map((user) => (
+                          <div style={{display:'flex', justifyContent:'left', paddingLeft:'100px'}}>
+                            <div className='circle-box'>
+                              <div className = 'semi-circle-top'>
+                                <div className='center'>
+                                  {user.L[2].N}
+                                </div>
+                              </div>
+                              <div className = 'semi-circle-bottom'>
+                                <div className='center'>
+                                  {user.L[3].N}
+                                </div>
+                              </div>
+                            </div>
+                          <div style={{paddingLeft:'20px', display:'grid', width:'40%'}}>
+                            <p>{"Course: "}{user.L[0].S}</p>
+                            <p>{user.L[1].S}</p>
+                          </div>  
+                            
+                          </div>
+                        ))}
+                        </div>
+            : 
+            <div>
+              There are no reviews yet! Leave your own :)
             </div>
-          ))}
+            }
 
           </div>
           </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CognitoUserPool, AuthenticationDetails, CognitoUser } from 'amazon-cognito-identity-js';
+import { CognitoUserPool, AuthenticationDetails, CognitoUser, CognitoUserAttribute  } from 'amazon-cognito-identity-js';
 import { SHA256 } from 'crypto-js';
 import CryptoJS from 'crypto-js';
 import {DashboardLayout} from  "./Layout"
@@ -15,6 +15,73 @@ export const isAuthenticated = () => {
   const currentUser = userPool.getCurrentUser();
   return currentUser !== null;
 };
+
+
+
+
+
+const updateUserData = (username, classes) => {
+  const poolData = {
+    UserPoolId: "us-west-2_YAGfQbS3O",
+    ClientId: "6engdt815h1efv4ktb1fp8e9to",
+  };
+  
+  const userPool = new CognitoUserPool(poolData);
+  const cognitoUser = userPool.getCurrentUser();
+
+
+  const userData = {
+    Username: cognitoUser,
+    Pool: poolData.userPool,
+  };
+
+  const user = new CognitoUser(userData);
+
+  const dobAttribute = new CognitoUserAttribute({
+    Name: "birthdate",
+    Value: classes,
+  });
+
+  cognitoUser.updateAttributes([dobAttribute], (err, result) => {
+    if (err) {
+      console.log("Error updating user data: ", err);
+      return false;
+    }
+    console.log("User data updated successfully: ", result);
+    return true;
+  });
+};
+
+const getUserAttributes = () => {
+  // get the user pool instance
+  const userPool = new CognitoUserPool({
+    UserPoolId: "us-west-2_YAGfQbS3O",
+    ClientId: "6engdt815h1efv4ktb1fp8e9to",
+  });
+
+  // get the current authenticated user
+  const currentUser = userPool.getCurrentUser();
+
+  if (currentUser != null) {
+    currentUser.getSession((err, session) => {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      // get user attributes
+      currentUser.getUserAttributes((err, attributes) => {
+        if (err) {
+          console.log(err);
+          return attributes;
+        }
+        // log the user attributes
+        console.log("User attributes:", attributes);
+      });
+    });
+  } else {
+    console.log("User not signed in");
+  }
+}
 
 
 export const signOut = () => {
@@ -68,7 +135,7 @@ const Login = () => {
     cognitoUser.authenticateUser(authDetails, {
       onSuccess: (result) => {
         console.log('Authentication successful:', result);
-        window.location.href = "../home";
+        window.location.href = "/";
         setSuccess(false);
 
         // do something upon successful authentication, e.g. redirect to a protected page

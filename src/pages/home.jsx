@@ -25,12 +25,7 @@ for (const x in student.courses){
 
 const HomePage = () => {
   
-  const [isLogged, setisLogged] = useState(false);
 
-  useEffect(() => { 
-
-    setisLogged(isAuthenticated())
-  }, []);
 
   return (
     
@@ -51,10 +46,11 @@ const HomePage = () => {
           <SearchBar></SearchBar>
           </div>
         </div>
-
+        {/*
         <div className="table">
               {StudentData.map((props) => {
                   return ( 
+                    <div style={{fontSize:'10px'}}>
                     <div className="row">
                       <div className="cell">
                         {props.courseName}
@@ -69,10 +65,12 @@ const HomePage = () => {
                         <p>{props.courseProf}</p>
                       </div>
                     </div>
+                    </div>
                   )
                 })}
             </div>    
-   
+        
+              */  }
       </div>
     
   );

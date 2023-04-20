@@ -22,7 +22,7 @@ function SearchBarCom({ options }) {
     <div className="search-bar-container">
       <input
         type="text"
-        placeholder="Search..."
+        placeholder="Search professors"
         value={searchTerm}
         onChange={handleInputChange}
       />
