@@ -32,21 +32,29 @@ function eventsMapping(courseList) {
 
 const addClass = (event, setEvents) => {
   // example course
-  const courses = {
-    courses: [
-      {
-        courseID: -1,
-        courseName: "courseName",
-        courseSub: "courseSub",
-        courseNum: "courseNum",
-        courseProf: ["first", "last"],
-        courseTime: ["19:00", "21:50"],
-        courseDays: ["Friday"],
-      },
-    ],
-  };
-
-  const newEvent = eventsMapping(courses.courses);
+  //const courses = { courses: [] };
+  const courses = [];
+  courses.push(
+    {
+      courseID: -1,
+      courseName: "courseName",
+      courseSub: "courseSub",
+      courseNum: "courseNum",
+      courseProf: ["first", "last"],
+      courseTime: ["22:00", "24:00"],
+      courseDays: ["Saturday"],
+    },
+    {
+      courseID: -2,
+      courseName: "courseName",
+      courseSub: "courseSub",
+      courseNum: "courseNum",
+      courseProf: ["first", "last"],
+      courseTime: ["22:00", "24:50"],
+      courseDays: ["Sunday"],
+    }
+  );
+  const newEvent = eventsMapping(courses);
   const doesContain = event.some((i) => i.id == newEvent[0].id);
   if (!doesContain) setEvents(event.concat(newEvent));
 };
