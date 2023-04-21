@@ -37,29 +37,6 @@ function eventsMapping(courseList) {
 }
 
 const addClass = (event, setEvents, newCourses) => {
-  // example course
-  //const courses = { courses: [] };
-  const courses = [];
-  courses.push(
-    {
-      courseID: -1,
-      courseName: "courseName",
-      courseSub: "courseSub",
-      courseNum: "courseNum",
-      courseProf: ["first", "last"],
-      courseTime: ["22:00", "24:00"],
-      courseDays: ["Saturday"],
-    },
-    {
-      courseID: -2,
-      courseName: "courseName",
-      courseSub: "courseSub",
-      courseNum: "courseNum",
-      courseProf: ["first", "last"],
-      courseTime: ["22:00", "24:50"],
-      courseDays: ["Sunday"],
-    }
-  );
   const newEvent = eventsMapping(newCourses);
   const doesContain = event.some((i) => i.id == newEvent[0].id);
   if (!doesContain) setEvents(event.concat(newEvent));
@@ -141,18 +118,24 @@ const AddClassPopup = (props) => {
       <IconButton
         variant="contained"
         onClick={handleClose}
-        sx={{ color: "red", position: "fixed", top: "1em", right: "1em" }}
+        sx={{ color: "white", position: "fixed", top: "1em", right: "1em" }}
       >
         <CloseIcon sx={{ fontSize: 40 }} />
       </IconButton>
       <Box p={1}>
         <Autocomplete
-          sx={{ width: 500 }}
-          options={newCourses.map((course) => course.courseName)}
-          renderInput={(params) => <TextField {...params} label="Courses" />}
-          onChange={() => {
+          options={newCourses}
+          getOptionLabel={(course) => course.courseName}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              style={{ width: 300 }}
+              label="Select Courses"
+            />
+          )}
+          onChange={(_, v) => {
+            addClass(event, setEvents, [v]);
             handleClose();
-            addClass(event, setEvents, newCourses);
           }}
         />
       </Box>
@@ -210,7 +193,6 @@ const Calendar = () => {
               addClass: {
                 text: "Add Class",
                 click: () => setAddClassPopup(true),
-                // click: () => addClass(event, setEvents),
               },
             }}
             headerToolbar={{
